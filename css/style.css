@@ -132,7 +132,7 @@ h1{
 }
 .search-input-wrapper{
     flex: 1;
-    background-color: #FBFCFE;
+    background-color: #fff;
     border-radius: 10px;
     border: 1.5px solid #dedede;
     height: 100%;
@@ -146,6 +146,7 @@ h1{
     width: 100%;
     background-color: transparent;
 }
+/* ----- BUTTON ----- */
 #search-button{
     border: none;
     outline: none;
@@ -153,11 +154,18 @@ h1{
 }
 
 .filter-button{
+    background-color:#fff;
     height: 100%;
+    border: 1.5px solid #dedede;
+    width: 2.5rem;
+    border-radius: 10px;
+    padding: 6px;
+    color: #8b8b8b;
 }
 .search-user{
     border: none;
     outline: none;
+
 }
 
 
