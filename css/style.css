@@ -93,6 +93,9 @@ header{
     margin: 1.8rem 1.3rem;
 }
 /* -------- HERO SECTION ------ */
+h1{
+    margin-bottom: 10px;
+}
 .hero-section{
     display: flex;
     flex-direction: column;
