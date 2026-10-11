@@ -89,5 +89,8 @@ header{
     .top-nav{
         display: block;
     }
+    header{
+        border-radius: 0;
+    }
 
 }
