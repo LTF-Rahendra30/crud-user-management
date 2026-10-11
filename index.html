@@ -26,7 +26,7 @@
         </div>
     </header>
 
-    <main class="app">
+    <main class="app" id="main-app">
         <aside class="sidebar">
             <nav class="top-nav">
                 <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -69,7 +69,7 @@
                 </div>
                 <div class="button-wrap">
 
-                    <button type="button" class="add-usr-button">
+                    <button type="button" class="add-usr-button" id="add-usr">
                         + Add user
                     </button>
                 </div>
@@ -103,6 +103,34 @@
         </div>
 
     </main>
+    <!-- ========== ADD USER PANE POP-UP ============= -->
+     <dialog id="modal-add-user">
+        <form method="dialog">
+            <h3>Add User</h3>
+            <div class="input-item">
+                <label for="" id="add-usr-label">name</label>
+                <input type="text" name="" id="user-name-value">
+            </div>
+            <div class="input-item">
+                <label for="" id="add-usr-label">Email</label>
+                <input type="email" name="" id="user-email-value">
+            </div>
+            <div class="input-item">
+                <label for="" id="add-usr-label">Role</label>
+                <select name="role" id="role-input-value">
+                    <option value="admin">Admin</option>
+                    <option value="editor">Editor</option>
+                    <option value="viewer">Viewer</option>
+                </select>
+            </div>
+            
+            <div class="button-wrap">
+                <button type="button" id="cencel-btn">Cencel</button>
+                <button type="button" id="save-btn">Save</button>
+            </div>
+
+        </form>
+     </dialog>
     <script src="js/app.js"></script>
 </body>
 
