@@ -103,6 +103,7 @@ header{
     width: 100%;
 }
 .add-usr-button{
+    width: 100%;
     font-weight: bold;
     padding: 6px 12px;
     border-radius: 8px;
@@ -206,11 +207,14 @@ header{
         justify-content: space-between;
     }
     
+    .button-wrap{
+        width: max-content;
+    }
+    .add-usr-button{
+        width: auto;
+    }
 }
 
 /* ========== DEKSTOP =============== */
 @media (min-width: 1024px) {
-    .button-wrap{
-        width: max-content;
-    }
 }
