@@ -117,7 +117,8 @@
             </div>
             <div class="input-item">
                 <label for="" id="add-usr-label">Role</label>
-                <select name="role" id="role-input-value" aria-placeholder="Enter role">
+                <select name="role" id="role-input-value" aria-placeholder="Enter role" required>
+                    <option value="" disabled selected hidden>Select role...</option>
                     <option value="admin">Admin</option>
                     <option value="editor">Editor</option>
                     <option value="viewer">Viewer</option>
