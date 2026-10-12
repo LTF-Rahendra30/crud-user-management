@@ -1,7 +1,9 @@
+import { createUser,getUsers } from "./usersService.js";
+
+
 const mainApp = document.getElementById('main-app');
 const addUserButton = document.getElementById('add-usr');
 
-let users = [];
 
 
 const modalAddUser = document.getElementById('modal-add-user');
@@ -21,16 +23,20 @@ const addUserForm = document.getElementById('add-usr-form');
 
 addUserForm.addEventListener('submit', (event) => {
     event.preventDefault();
-
+    
     const formData = new FormData(addUserForm);
     const name = formData.get("name");
     const email = formData.get("email");
     const role = formData.get("role")
+    
+    const user = createUser(name,email,role);
 
-    console.log(name);
-    console.log(email);
-    console.log(role);
+    console.log(getUsers());
+    
+    
 
     addUserForm.reset();
     modalAddUser.close();
 })
+
+
