@@ -279,6 +279,7 @@ h1{
 @media (min-width: 1024px) {
     
 }
+/* ======= PANEL ADD USER ========= */
 dialog{
     width: min(80vw,400px);
     max-height: 350px;
@@ -298,7 +299,11 @@ dialog h3{
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
 }
-/* ======= PANEL ADD USER ========= */
+dialog input, dialog select{
+    border: 1.5px solid #dedede;
+    border-radius: 8px;
+    padding: 8px;
+}
 #modal-add-user{
     
 }
