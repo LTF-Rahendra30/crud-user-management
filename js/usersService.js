@@ -85,10 +85,10 @@ let users = [
     }
 ];
 
-const userId = Math.max(...users.map(user => user.id)) + 1;
 
 // ============ FUNCTION CREATE & ADD USER ========
 export function createUser(name,email,role){
+    let userId = Math.max(...users.map(user => user.id)) + 1;
     const cleanName = name.trim();
 
     if(!cleanName){
