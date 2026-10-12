@@ -106,10 +106,10 @@
     <!-- ========== ADD USER PANE POP-UP ============= -->
      <dialog id="modal-add-user">
         <h3>Add User</h3>
-        <form method="dialog">
-            <div class="input-item">
+        <form method="dialog" id="add-usr-form">
+            <div class="input-item" >
                 <label for="" id="add-usr-label">Name</label>
-                <input type="text" name="" id="user-name-value" placeholder="Enter name">
+                <input type="text" name="name" id="user-name-value" placeholder="Enter name">
             </div>
             <div class="input-item">
                 <label for="" id="add-usr-label">Email</label>
@@ -127,7 +127,7 @@
             
             <div class="button-wrap-dialog">
                 <button type="button" id="cencel-btn">Cencel</button>
-                <button type="button" id="save-btn">Save</button>
+                <button type="submit" id="save-btn">Save</button>
             </div>
 
         </form>
