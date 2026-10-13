@@ -37,6 +37,21 @@ addUserForm.addEventListener('submit', (event) => {
 
     addUserForm.reset();
     modalAddUser.close();
+    renderMainPage();
 })
 
 
+// ============= RENDER USER ============
+function renderUser(){
+    userList.innerHTML = users.map(user => `
+        <li>
+            <h4>${user.name}</h4>
+            <p>${user.email}</p>
+            <span>${user.role}</span>
+        </li>
+    `).join("");
+}
+function renderMainPage(){
+    renderUser();
+}
+renderMainPage();
