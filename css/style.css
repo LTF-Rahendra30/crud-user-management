@@ -191,9 +191,11 @@ h1{
 }
 .user-information{
     display: flex;
-    gap: 10px;
+    gap: 1rem;
 }
 .user-profile{
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
