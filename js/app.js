@@ -44,10 +44,22 @@ addUserForm.addEventListener('submit', (event) => {
 function renderUser(){
     const users = getUsers();
     userList.innerHTML = users.map(user => `
-        <li>
-            <h4>${user.name}</h4>
-            <p>${user.email}</p>
-            <span>${user.role}</span>
+        <li class="user-card">
+            <div class="user-information">
+                <div class="user-profile"></div>
+                <div class="user-descrb">
+                    <h4>${user.name}</h4>
+                    <p>${user.email}</p>
+                    <div class="user-status-role">
+                        <span clas="role">${user.role}</span>
+                        <span clas="status">${user.role}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="user-del-edit">
+                <button class="edit-btn" type="button">Edit</button>
+                <button class="delete-btn" type="button">Delete</button>
+            </div>
         </li>
     `).join("");
 }
