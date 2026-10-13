@@ -3,7 +3,6 @@ import { createUser,getUsers } from "./usersService.js";
 
 const userList = document.getElementById('user-list');
 const addUserButton = document.getElementById('add-usr');
-const users = getUsers();
 
 
 const modalAddUser = document.getElementById('modal-add-user');
@@ -43,6 +42,7 @@ addUserForm.addEventListener('submit', (event) => {
 
 // ============= RENDER USER ============
 function renderUser(){
+    const users = getUsers();
     userList.innerHTML = users.map(user => `
         <li>
             <h4>${user.name}</h4>
