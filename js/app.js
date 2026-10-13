@@ -56,7 +56,7 @@ function renderUser(){
                     <p>${user.email}</p>
                     <div class="user-status-role">
                         <span clas="role">${user.role}</span>
-                        <span clas="status">${user.role}</span>
+                        <span clas="status">${user.status}</span>
                     </div>
                 </div>
             </div>
