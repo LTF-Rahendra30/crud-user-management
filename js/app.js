@@ -1,9 +1,9 @@
 import { createUser,getUsers } from "./usersService.js";
 
 
-const mainApp = document.getElementById('main-app');
+const userList = document.getElementById('user-list');
 const addUserButton = document.getElementById('add-usr');
-
+const users = getUsers();
 
 
 const modalAddUser = document.getElementById('modal-add-user');
