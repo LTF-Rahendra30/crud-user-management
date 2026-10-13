@@ -13,6 +13,10 @@
 body{
     font-family: sans-serif;
     background-color: #F7F9FE;
+    
+}
+ul{
+    list-style-type: none;
 }
 a{
     text-decoration: none;
@@ -92,7 +96,8 @@ header{
 }
 /* ========= MAIN COTENT ======== */
 .main{
-    margin: 1.8rem 1.3rem;
+    margin: 1.8rem 1.3rem 2rem 1.3rem;
+    /* margin-bottom: 2rem; */
 }
 /* -------- HERO SECTION ------ */
 h1{
@@ -171,6 +176,7 @@ h1{
 }
 
 
+/* =========== USER CARD =========== */
 
 
 
