@@ -177,7 +177,22 @@ h1{
 
 
 /* =========== USER CARD =========== */
+.user-profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background-color: #dceaff;
+    color: #2778df;
+}
+.user-profile svg {
+    width: 36px;
+    height: 36px;
+}
 
 
 
