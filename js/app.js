@@ -46,7 +46,11 @@ function renderUser(){
     userList.innerHTML = users.map(user => `
         <li class="user-card">
             <div class="user-information">
-                <div class="user-profile"></div>
+                <div class="user-profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                    </svg>
+                </div>
                 <div class="user-descrb">
                     <h4>${user.name}</h4>
                     <p>${user.email}</p>
