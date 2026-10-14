@@ -45,7 +45,8 @@ const cencelDelUserBtn = document.getElementById('cencel-del-button');
 
 cencelDelUserBtn.addEventListener('click',() =>{
     modalDelUser.close();
-})
+});
+
 userList.addEventListener('click', (event) => {
     const deleteButton = event.target.closest('.delete-btn');
 

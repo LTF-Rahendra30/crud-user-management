@@ -377,7 +377,7 @@ dialog input, dialog select{
 }
 dialog button{
     border-radius: 8px;
-    padding: 6px 14px;
+    padding: 8px 1.2rem;
     outline: none;
     border: none;
     font-weight: 500;
@@ -450,6 +450,10 @@ dialog::backdrop{
 .del-usr-icon svg{
     width: 36px;
     height: 36px;
+}
+.button-wrap-delete{
+    display: flex;
+    gap: 1rem;
 }
 .button-wrap-delete:first-child{
     background-color: #f3f6fb;
