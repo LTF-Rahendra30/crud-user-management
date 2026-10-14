@@ -419,7 +419,7 @@ dialog::backdrop{
 }
 
 /* ====== DELETE DIALOG ===== */
-#modal-del-user{
+#modal-del-user:open{
     display: flex;
     flex-direction: column;
     gap: 1rem;
