@@ -216,10 +216,30 @@ h1{
     height: 36px;
 }
 
-
-
-
-
+/* ---- USER CARD BUTTON ----- */
+.user-del-edit{
+    display: flex;
+    gap: 0.7rem;
+}
+.user-del-edit svg{
+    color: var(--primary-white);
+    width: 20x;
+    height: 20px;
+}
+.user-del-edit button{
+    outline: none;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 10px;
+    width: 100%;
+    max-height: 45px;
+}
+.user-del-edit .delete-btn{
+    background-color: #FD4F51;
+}
+.user-del-edit .edit-btn{
+    background-color: var(--primary-blue);
+}
 
 
 
