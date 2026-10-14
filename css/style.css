@@ -247,7 +247,15 @@ h1{
 
 
 
+/* ========== MEDIA QUERY ========= */
 
+/* ------ MINI PHONE ---------- */
+@media  (max-width: 410px){
+    .user-card{
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
 
 
 
