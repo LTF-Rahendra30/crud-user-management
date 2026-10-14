@@ -38,7 +38,18 @@ addUserForm.addEventListener('submit', (event) => {
     modalAddUser.close();
     renderMainPage();
 })
+// ========= EVENT DELEGATION FOR DELETE USER IN USER CARD =========
+userList.addEventListener('click', (event) => {
+    const deleteButton = event.target.closest('.delete-btn');
 
+    console.log(deleteButton);
+    if(deleteButton){
+        console.log("Helo wok");
+        console.log(deleteButton);
+        
+    }
+    
+})
 
 // ============= RENDER USER ============
 function renderUser(){
