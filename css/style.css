@@ -351,7 +351,7 @@ h1{
 /* ======= PANEL ADD USER ========= */
 dialog{
     width: min(80vw,400px);
-    max-height: 380px;
+    max-height: max-content;
     overflow-y: auto;
     background-color: var(--primary-white);
     border-radius: 10px;
@@ -385,6 +385,16 @@ dialog button{
 }
 dialog input:focus{
     border: 1.5px solid var(--primary-blue);
+}
+form fieldset{
+    border: none;
+    margin: 0;
+    padding: 0;
+    min-inline-size: 0;
+}
+form fieldset legend{
+    margin-bottom: 0.5rem;
+    padding: 0;
 }
 #modal-add-user h3{
     margin-bottom: 1.5rem;
@@ -424,7 +434,11 @@ dialog::backdrop{
     gap: 0.5rem;
     color: var(--primary-dark);
 }
+.user-status-input-wrap label{
+    align-items: center;
+    font-weight: normal;
 
+}
 
 /* ====== DELETE DIALOG ===== */
 #modal-del-user:open{
