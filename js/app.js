@@ -40,8 +40,10 @@ addUserForm.addEventListener('submit', (event) => {
 })
 
 // ========= EVENT DELEGATION FOR DELETE USER IN USER CARD =========
+
 const modalDelUser = document.getElementById('modal-del-user');
 const cencelDelUserBtn = document.getElementById('cencel-del-button');
+const deleteUserButtonYes = document.getElementById('dialog-del-btn');
 
 cencelDelUserBtn.addEventListener('click',() =>{
     modalDelUser.close();
@@ -50,9 +52,11 @@ cencelDelUserBtn.addEventListener('click',() =>{
 userList.addEventListener('click', (event) => {
     const deleteButton = event.target.closest('.delete-btn');
 
-    
     if(deleteButton){
+        const users = getUsers();
         modalDelUser.showModal();
+
+        // users.filter(usr => usr.id === )
     }
     
 })
@@ -61,7 +65,7 @@ userList.addEventListener('click', (event) => {
 function renderUser(){
     const users = getUsers();
     userList.innerHTML = users.map(user => `
-        <li class="user-card">
+        <li class="user-card" data-user-id="${user.id}">
             <div class="user-information">
                 <div class="user-profile">
                     <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
