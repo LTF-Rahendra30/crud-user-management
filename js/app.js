@@ -26,9 +26,10 @@ addUserForm.addEventListener('submit', (event) => {
     const formData = new FormData(addUserForm);
     const name = formData.get("name");
     const email = formData.get("email");
-    const role = formData.get("role")
+    const role = formData.get("role");
+    const status = formData.get("status");
     
-    const user = createUser(name,email,role);
+    const user = createUser(name,email,role,status);
 
     console.log(getUsers());
     
@@ -95,8 +96,8 @@ function renderUser(){
                     <h4>${user.name}</h4>
                     <p>${user.email}</p>
                     <div class="user-status-role">
-                        <span clas="role">${user.role}</span>
-                        <span clas="status">${user.status}</span>
+                        <span class="role">${user.role}</span>
+                        <span class="status">${user.status}</span>
                     </div>
                 </div>
             </div>
