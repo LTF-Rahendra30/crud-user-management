@@ -417,7 +417,57 @@ dialog::backdrop{
     color: var(--primary-white);
     background-color: var(--primary-blue);
 }
+/* ---------- SLIDER DIALOG ------ */
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    /* padding: 8px; */
+}
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
 
+.slider{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #dedede;
+    transition: 0.8s;
+    border-radius: 30px;
+}
+/* .slider:after{
+    position: absolute;
+    color: var(--text-color);
+    top: 50%;
+    font-size: 0.8rem;
+    font-weight: normal;
+    right: 10px;
+    transition: 0.5s;
+}
+.slider:before{
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    transition: 0.5s;
+    } */
+.switch input:checked + .slider{
+    background-color: var(--primary-blue);
+        
+}
+.switch input:checked + .slider:before{
+    background-color: #f3f6fb;
+    z-index: 4;
+    border-radius: 50%;
+   transform: translateX(66px);
+}
+.switch input:checked + .slider:after{
+    left: 12px;
+}
 /* ====== DELETE DIALOG ===== */
 #modal-del-user:open{
     display: flex;
