@@ -87,7 +87,7 @@ let users = [
 
 
 // ============ FUNCTION CREATE & ADD USER ========
-export function createUser(name,email,role){
+export function createUser(name,email,role,status){
     let userId = Math.max(...users.map(user => user.id)) + 1;
     const cleanName = name.trim();
 
@@ -99,7 +99,8 @@ export function createUser(name,email,role){
         id: userId,
         name: cleanName,
         email: email,
-        role: role
+        role: role,
+        status:status
     };
 
     users.push(newUser);
