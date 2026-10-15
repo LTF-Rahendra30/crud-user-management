@@ -1,4 +1,4 @@
-import { createUser,getUsers } from "./usersService.js";
+import { createUser,getUsers,deleteUser } from "./usersService.js";
 
 
 const userList = document.getElementById('user-list');
@@ -49,25 +49,33 @@ cencelDelUserBtn.addEventListener('click',() =>{
     modalDelUser.close();
 });
 
+let userIdThatDeleted = null;
 userList.addEventListener('click', (event) => {
-    const liUser = event.target.closest('li');
-    const userThatDeleted = parseInt(liUser.getAttribute('data-user-id'));
     const deleteButton = event.target.closest('.delete-btn');
     
+    if(!deleteButton) return;
     
-
-    if(deleteButton){
-        const users = getUsers();
-        modalDelUser.showModal();
-
-        // ----- DELETE USER FORM ARRAY -----
-        deleteUserButtonYes.addEventListener('click' ,() => {
-            users.filter(usr => usr.id !== userThatDeleted);
+    const liUser = event.target.closest('li');
+    if(!liUser) return;
+    // ----- DELETE USER FORM ARRAY ----
     
-            renderMainPage(); 
-        })
+    userIdThatDeleted = Number(liUser.dataset.userId);
+    
+    modalDelUser.showModal();
+    
+})
+// ------ LISTENER TO HENDLE YES COMIRM FOR DELETE USER -------
+const users = getUsers();
+console.log(users);
+deleteUserButtonYes.addEventListener('click', () => {
+    if(userIdThatDeleted === null) return;
+    deleteUser(userIdThatDeleted);
+    // userIdThatDeleted = null;
 
-    }
+    modalDelUser.close();
+    renderMainPage();
+    const users = getUsers();
+    console.log(users);
     
 })
 

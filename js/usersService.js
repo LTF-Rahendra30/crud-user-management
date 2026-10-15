@@ -117,4 +117,4 @@ export function deleteUser(id){
     return users = users.filter(usr => usr.id !== id); 
 }
 
-console.log(deleteUser(1));
+// console.log(deleteUser(12));
