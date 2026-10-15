@@ -69,8 +69,9 @@ const users = getUsers();
 console.log(users);
 deleteUserButtonYes.addEventListener('click', () => {
     if(userIdThatDeleted === null) return;
+
     deleteUser(userIdThatDeleted);
-    // userIdThatDeleted = null;
+    userIdThatDeleted = null;
 
     modalDelUser.close();
     renderMainPage();
