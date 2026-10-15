@@ -99,8 +99,8 @@ export function createUser(name,email,role,status){
         id: userId,
         name: cleanName,
         email: email,
-        role: role,
-        status:status
+        status:status,
+        role: role
     };
 
     users.push(newUser);
