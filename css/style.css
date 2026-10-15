@@ -361,7 +361,7 @@ dialog{
     justify-content: center;
     color: var(--text-color);
 }
-dialog label{
+dialog label, dialog legend{
     font-weight: 600;
     color: var(--label-color);
 }
@@ -369,6 +369,7 @@ dialog h3{
     font-size: 1.5rem;
     color: var(--primary-dark);
 }
+
 dialog input, dialog select{
     border: 1.5px solid #dedede;
     border-radius: 8px;
