@@ -125,16 +125,20 @@
                 </select>
             </div>
 
-            <div class="input-item">
-                <label class="user-status-label">Status</label>
+            <fieldset class="input-item">
+                <legend class="user-status-label">Status User</legend>
                 <div class="user-status-input-wrap">
-                    <input type="radio" name="status" id="status-user-input" required value="nonactive">
-                    <span>Nonactive</span>
-                    
-                    <input type="radio" name="status" id="user-status" required value="active">
-                    <span>Active</span>
+                    <label for="status-inactive">
+                        <input type="radio" name="status" id="status-inactive" required value="nonactive">
+                        Inactive
+                    </label>
+
+                    <label for="status-active">
+                        <input type="radio" name="status" id="status-active" required value="active">
+                        Active
+                    </label>
                 </div>
-            </div>
+            </fieldset>
 
             <div class="button-wrap-dialog">
                 <button type="button" id="cencel-btn">Cencel</button>
