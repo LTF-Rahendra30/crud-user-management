@@ -50,13 +50,23 @@ cencelDelUserBtn.addEventListener('click',() =>{
 });
 
 userList.addEventListener('click', (event) => {
+    const liUser = event.target.closest('li');
+    const userThatDeleted = parseInt(liUser.getAttribute('data-user-id'));
     const deleteButton = event.target.closest('.delete-btn');
+    
+    
 
     if(deleteButton){
         const users = getUsers();
         modalDelUser.showModal();
 
-        // users.filter(usr => usr.id === )
+        // ----- DELETE USER FORM ARRAY -----
+        deleteUserButtonYes.addEventListener('click' ,() => {
+            users.filter(usr => usr.id !== userThatDeleted);
+    
+            renderMainPage(); 
+        })
+
     }
     
 })
