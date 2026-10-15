@@ -111,3 +111,10 @@ export function createUser(name,email,role){
 export function getUsers(){
     return [...users];
 }
+
+// ===== DELETE USER ======
+export function deleteUser(id){
+    return users = users.filter(usr => usr.id !== id); 
+}
+
+console.log(deleteUser(1));
