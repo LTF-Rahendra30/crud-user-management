@@ -1,4 +1,4 @@
-import { createUser,getUsers,deleteUser } from "./usersService.js";
+import { createUser,getUsers,deleteUser,editUser } from "./usersService.js";
 
 
 const userList = document.getElementById('user-list');
@@ -46,14 +46,45 @@ addUserForm.addEventListener('submit', (event) => {
 // ====== HENDLE EDIT USER =========
 const editUserForm = document.getElementById('modal-edit-user');
 const modalEditUser = document.getElementById('modal-edit-user');
+
+// ------ Listener to get li user target ---
 const cencelEditUserBtn = document.getElementById('cencel-edit-usr-btn');
 
+let userIdThatDeleted = null;
+let liUser = null;
+userList.addEventListener('click', (event) => {
+    const editButton = event.target.closest('.edit-btn');
+    console.log(editButton);
+    const deleteButton = event.target.closest('.delete-btn');
+    
+    
+    liUser = event.target.closest('li');
+    if(!liUser) return;
+
+    // ----- DELETE USER FORM ARRAY ----
+    userIdThatDeleted = Number(liUser.dataset.userId);
+    
+    if(editButton) modalEditUser.showModal();
+    if(deleteButton) modalDelUser.showModal();
+    else return;
+    
+})
 // ------ LISTENER TO HENDLE YES COMIRM FOR EDIT USER -------
 editUserForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log("Hello");
+    
+    const formData = new FormData(editUserForm);
+    const idUser = userIdThatDeleted;
+    const newName = formData.get("name")
+    const newEmail = formData.get("email")
+    const newRole = formData.get("role")
+    const newStatus = formData.get("status");
+    
+    editUser(idUser,newName,newEmail,newRole,newStatus);
     
     modalEditUser.close();
+    editUserForm.reset();
+    renderMainPage();
 });
 
 
@@ -72,24 +103,6 @@ cencelDelUserBtn.addEventListener('click',() =>{
     modalDelUser.close();
 });
 
-let userIdThatDeleted = null;
-userList.addEventListener('click', (event) => {
-    const editButton = event.target.closest('.edit-btn');
-    console.log(editButton);
-    const deleteButton = event.target.closest('.delete-btn');
-    
-    
-    const liUser = event.target.closest('li');
-    if(!liUser) return;
-
-    // ----- DELETE USER FORM ARRAY ----
-    userIdThatDeleted = Number(liUser.dataset.userId);
-    
-    if(editButton) modalEditUser.showModal();
-    if(deleteButton) modalDelUser.showModal();
-    else return;
-    
-})
 // ------ LISTENER TO HENDLE YES COMIRM FOR DELETE USER -------
 const users = getUsers();
 console.log(users);
