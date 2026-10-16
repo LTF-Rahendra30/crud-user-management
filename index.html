@@ -148,7 +148,7 @@
             
         </form>
     </dialog>
-
+    
     <!-- ========== DELETE USER DIALOG ============ -->
     <dialog id="modal-del-user">
         <div class="del-usr-icon">
@@ -164,6 +164,52 @@
             <button type="button" id="dialog-del-btn">Delete</button>
         </div>
     </dialog>
+    <!-- ======== EDIT USER ======== -->
+    <dialog id="modal-edit-user">
+        <h3>Edit User</h3>
+        <form id="add-usr-form">
+            <div class="input-item">
+                <label for="" id="add-usr-label">Name</label>
+                <input type="text" name="name" id="user-name-value" placeholder="Enter name" required>
+            </div>
+            <div class="input-item">
+                <label for="" id="add-usr-label">Email</label>
+                <input type="email" name="email" id="user-email-value" placeholder="Enter email" required>
+            </div>
+            <div class="input-item">
+                <label for="" id="add-usr-label">Role</label>
+                <select name="role" id="role-input-value" aria-placeholder="Enter role" required>
+                    <option value="" disabled selected hidden>Select role...</option>
+                    <option value="admin">Admin</option>
+                    <option value="editor">Editor</option>
+                    <option value="viewer">Viewer</option>
+                </select>
+            </div>
+
+            <fieldset class="input-item">
+                <legend class="user-status-label">Status User</legend>
+                <div class="user-status-input-wrap">
+                    <label for="status-inactive">
+                        <input type="radio" name="status" id="status-inactive" required value="inactive">
+                        Inactive
+                    </label>
+
+                    <label for="status-active">
+                        <input type="radio" name="status" id="status-active" required value="active">
+                        Active
+                    </label>
+                </div>
+            </fieldset>
+
+            <div class="button-wrap-dialog">
+                <button type="button" id="cencel-btn">Cencel</button>
+                <button type="submit" id="save-btn">Save</button>
+            </div>
+            
+            
+        </form>
+    </dialog>
+    
     <script type="module" src="js/app.js"></script>
 </body>
 
