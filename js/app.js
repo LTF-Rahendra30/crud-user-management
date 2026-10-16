@@ -40,21 +40,34 @@ addUserForm.addEventListener('submit', (event) => {
     renderMainPage();
 })
 
+
+
+
+// ====== HENDLE EDIT USER =========
+const modalEditUser = document.getElementById('modal-edit-user');
+const cencelEditUserBtn = document.getElementById('cencel-edit-usr-btn');
+const editUserBtnSave = document.getElementById('save-edit-user-btn');
 // ========= EVENT DELEGATION FOR DELETE USER IN USER CARD =========
 
 const modalDelUser = document.getElementById('modal-del-user');
 const cencelDelUserBtn = document.getElementById('cencel-del-button');
 const deleteUserButtonYes = document.getElementById('dialog-del-btn');
 
+// --- Close dialog ---
+cencelEditUserBtn.addEventListener('click', () => {
+    modalEditUser.close();
+});
+// --- Close dialog ---
 cencelDelUserBtn.addEventListener('click',() =>{
     modalDelUser.close();
 });
 
 let userIdThatDeleted = null;
 userList.addEventListener('click', (event) => {
+    const editButton = event.target.closest('.edit-btn');
+    console.log(editButton);
     const deleteButton = event.target.closest('.delete-btn');
     
-    if(!deleteButton) return;
     
     const liUser = event.target.closest('li');
     if(!liUser) return;
@@ -62,7 +75,9 @@ userList.addEventListener('click', (event) => {
     
     userIdThatDeleted = Number(liUser.dataset.userId);
     
-    modalDelUser.showModal();
+    if(editButton) modalEditUser.showModal();
+    if(deleteButton) modalDelUser.showModal();
+    else return;
     
 })
 // ------ LISTENER TO HENDLE YES COMIRM FOR DELETE USER -------
