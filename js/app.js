@@ -44,7 +44,7 @@ addUserForm.addEventListener('submit', (event) => {
 
 
 // ====== HENDLE EDIT USER =========
-const editUserForm = document.getElementById('modal-edit-user');
+const editUserForm = document.getElementById('edit-usr-form');
 const modalEditUser = document.getElementById('modal-edit-user');
 
 // ------ Listener to get li user target ---
@@ -69,7 +69,8 @@ userList.addEventListener('click', (event) => {
     else return;
     
 })
-// ------ LISTENER TO HENDLE YES COMIRM FOR EDIT USER -------
+
+// ======= LISTENER TO HENDLE YES COMIRM FOR EDIT USER =======
 editUserForm.addEventListener('submit', (event) => {
     event.preventDefault();
     
@@ -81,6 +82,7 @@ editUserForm.addEventListener('submit', (event) => {
     const newStatus = formData.get("status");
     
     editUser(idUser,newName,newEmail,newRole,newStatus);
+    console.log(getUsers());
     
     modalEditUser.close();
     editUserForm.reset();
