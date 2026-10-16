@@ -44,18 +44,20 @@ addUserForm.addEventListener('submit', (event) => {
 
 
 // ====== HENDLE EDIT USER =========
+const editUserForm = document.getElementById('modal-edit-user');
 const modalEditUser = document.getElementById('modal-edit-user');
 const cencelEditUserBtn = document.getElementById('cencel-edit-usr-btn');
-const editUserBtnSave = document.getElementById('save-edit-user-btn');
+
 // ------ LISTENER TO HENDLE YES COMIRM FOR EDIT USER -------
-editUserBtnSave.addEventListener('submit', () => {
+editUserForm.addEventListener('submit', (event) => {
+    event.preventDefault();
     console.log("Hello");
     
     modalEditUser.close();
 });
 
 
-// ========= EVENT DELEGATION FOR DELETE USER IN USER CARD =========
+// ========= EVENT DELEGATION FOR SHOW DIALOG DELETE USER & EDIT USER =========
 
 const modalDelUser = document.getElementById('modal-del-user');
 const cencelDelUserBtn = document.getElementById('cencel-del-button');
