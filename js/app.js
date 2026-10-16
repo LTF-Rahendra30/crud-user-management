@@ -47,6 +47,14 @@ addUserForm.addEventListener('submit', (event) => {
 const modalEditUser = document.getElementById('modal-edit-user');
 const cencelEditUserBtn = document.getElementById('cencel-edit-usr-btn');
 const editUserBtnSave = document.getElementById('save-edit-user-btn');
+// ------ LISTENER TO HENDLE YES COMIRM FOR EDIT USER -------
+editUserBtnSave.addEventListener('submit', () => {
+    console.log("Hello");
+    
+    modalEditUser.close();
+});
+
+
 // ========= EVENT DELEGATION FOR DELETE USER IN USER CARD =========
 
 const modalDelUser = document.getElementById('modal-del-user');
@@ -71,8 +79,8 @@ userList.addEventListener('click', (event) => {
     
     const liUser = event.target.closest('li');
     if(!liUser) return;
+
     // ----- DELETE USER FORM ARRAY ----
-    
     userIdThatDeleted = Number(liUser.dataset.userId);
     
     if(editButton) modalEditUser.showModal();
@@ -85,10 +93,10 @@ const users = getUsers();
 console.log(users);
 deleteUserButtonYes.addEventListener('click', () => {
     if(userIdThatDeleted === null) return;
-
+    
     deleteUser(userIdThatDeleted);
     userIdThatDeleted = null;
-
+    
     modalDelUser.close();
     renderMainPage();
     const users = getUsers();
