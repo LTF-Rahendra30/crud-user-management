@@ -90,11 +90,11 @@ let users = [
 export function createUser(name,email,role,status){
     let userId = Math.max(...users.map(user => user.id)) + 1;
     const cleanName = name.trim();
-
+    
     if(!cleanName){
         return null;
     }
-
+    
     const newUser = {
         id: userId,
         name: cleanName,
@@ -102,9 +102,9 @@ export function createUser(name,email,role,status){
         status:status,
         role: role
     };
-
+    
     users.push(newUser);
-
+    
     return newUser;
 }
 
@@ -112,6 +112,25 @@ export function createUser(name,email,role,status){
 export function getUsers(){
     return [...users];
 }
+// =====  EDIT USER ====
+export function editUser(id,newName,newEmail,newRole,newStatus){
+    const cleanName = newName.trim();
+    if(!cleanName){
+        return null;
+    }
+    
+    const users = getUsers();
+    const user = users.find(usr => usr.id === Number(id)) ;
+
+    if(!user) return false;
+
+    user.name = newName;
+    user.email = newEmail;
+    user.role = newRole;
+    user.status = newStatus;
+}
+
+
 
 // ===== DELETE USER ======
 export function deleteUser(id){
@@ -119,3 +138,7 @@ export function deleteUser(id){
 }
 
 // console.log(deleteUser(12));
+console.log((getUsers()));
+const editUser1 = editUser(12,"Joko","Joko@gmail.com","Kontol","MBG");
+console.log((getUsers()));
+// console.log(editUser1);
