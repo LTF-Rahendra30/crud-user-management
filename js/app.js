@@ -81,7 +81,7 @@ userList.addEventListener('click', (event) => {
             `input[name="status"][value="${selectedUser.status}"]`
         )
         
-        if (statusInput) statusInput.cheked = true;
+        if (statusInput) statusInput.checked = true;
         
         modalEditUser.showModal();
     } else if(deleteButton) {
