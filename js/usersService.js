@@ -119,15 +119,16 @@ export function editUser(id,newName,newEmail,newRole,newStatus){
         return null;
     }
     
-    const users = getUsers();
     const user = users.find(usr => usr.id === Number(id)) ;
 
-    if(!user) return false;
+    if(!user) return null;
 
-    user.name = newName;
+    user.name = cleanName;
     user.email = newEmail;
     user.role = newRole;
     user.status = newStatus;
+
+    return user;
 }
 
 
@@ -136,9 +137,3 @@ export function editUser(id,newName,newEmail,newRole,newStatus){
 export function deleteUser(id){
     return users = users.filter(usr => usr.id !== id); 
 }
-
-// console.log(deleteUser(12));
-console.log((getUsers()));
-const editUser1 = editUser(12,"Joko","Joko@gmail.com","Kontol","MBG");
-console.log((getUsers()));
-// console.log(editUser1);
