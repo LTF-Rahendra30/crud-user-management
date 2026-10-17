@@ -67,7 +67,22 @@ userList.addEventListener('click', (event) => {
     
     selectedUserId = Number(liUser.dataset.userId);
     
+    // ====== EDIT USER FORM AND FILED FROM USER DATA ======
     if(editButton){
+        const selectedUser = getUsers().find(user => user.id === selectedUserId);
+        
+        if(!selectedUser) return;
+        
+        editUserForm.querySelector('[name="name"]').value = selectedUser.name;
+        editUserForm.querySelector('[name="email"]').value = selectedUser.email;
+        editUserForm.querySelector('[name="role"]').value = selectedUser.role;
+        
+        const statusInput = editUserForm.querySelector(
+            `input[name="status"][value="${selectedUser.status}"]`
+        )
+        
+        if (statusInput) statusInput.cheked = true;
+        
         modalEditUser.showModal();
     } else if(deleteButton) {
         modalDelUser.showModal();
