@@ -62,6 +62,7 @@ userList.addEventListener('click', (event) => {
     // Ignore click in card that dont Edit button or Delete button
     if(!editButton && !deleteButton) return;
     
+    // li that click to get attribute user data id 
     liUser = event.target.closest('li');
     if(!liUser) return;
     
