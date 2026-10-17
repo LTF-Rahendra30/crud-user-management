@@ -80,7 +80,7 @@ editUserForm.addEventListener('submit', (event) => {
     event.preventDefault();
     
     const formData = new FormData(editUserForm);
-    const idUser = userIdThatDeleted;
+    const idUser = selectedUserId;
     const newName = formData.get("name")
     const newEmail = formData.get("email")
     const newRole = formData.get("role")
@@ -114,10 +114,10 @@ cencelDelUserBtn.addEventListener('click',() =>{
 const users = getUsers();
 console.log(users);
 deleteUserButtonYes.addEventListener('click', () => {
-    if(userIdThatDeleted === null) return;
+    if(selectedUserId === null) return;
     
-    deleteUser(userIdThatDeleted);
-    userIdThatDeleted = null;
+    deleteUser(selectedUserId);
+    selectedUserId = null;
     
     modalDelUser.close();
     renderMainPage();
