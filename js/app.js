@@ -51,23 +51,27 @@ const modalEditUser = document.getElementById('modal-edit-user');
 // ------ Listener to get li user target ---
 const cencelEditUserBtn = document.getElementById('cencel-edit-usr-btn');
 
-let userIdThatDeleted = null;
+let selectedUserId = null;
 let liUser = null;
+
 userList.addEventListener('click', (event) => {
     const editButton = event.target.closest('.edit-btn');
     console.log(editButton);
     const deleteButton = event.target.closest('.delete-btn');
     
+    // Ignore click in card that dont Edit button or Delete button
+    if(!editButton && !deleteButton) return;
     
     liUser = event.target.closest('li');
     if(!liUser) return;
-
-    // ----- DELETE USER FORM ARRAY ----
-    userIdThatDeleted = Number(liUser.dataset.userId);
     
-    if(editButton) modalEditUser.showModal();
-    if(deleteButton) modalDelUser.showModal();
-    else return;
+    selectedUserId = Number(liUser.dataset.userId);
+    
+    if(editButton){
+        modalEditUser.showModal();
+    } else if(deleteButton) {
+        modalDelUser.showModal();
+    }
     
 })
 
@@ -158,6 +162,8 @@ function renderUser(){
         </li>
     `).join("");
 }
+
+// ===== RENDER MAIN PAGE =====
 function renderMainPage(){
     renderUser();
 }
