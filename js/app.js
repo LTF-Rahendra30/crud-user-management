@@ -8,6 +8,7 @@ const addUserButton = document.getElementById('add-usr');
 const modalAddUser = document.getElementById('modal-add-user');
 const addUserCencelBtn = document.getElementById('cencel-btn');
 
+// ===== HENDLER DIALOG ADD USER ======
 addUserButton.addEventListener('click', () => {
     modalAddUser.showModal();
     
