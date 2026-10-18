@@ -487,3 +487,23 @@ dialog::backdrop{
     color: var(--primary-white);
     background-color: var(--primary-red);
 }
+
+/* ===== FILTER USER DIALOG ==== */
+.head-filter-usr{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+}
+.head-filter-usr h3{
+    margin-bottom: 0;
+}
+#close-filter-user{
+    background-color: transparent;
+    padding: 0;
+}
+#modal-filter-user .button-wrap-dialog{
+    margin: auto;
+    margin-top: 1rem;
+}
