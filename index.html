@@ -104,6 +104,36 @@
 
     </main>
     <!-- ========== ADD USER PANE POP-UP ============= -->
+    <dialog id="modal-filter-user">
+        <div class="head-filter-usr">
+            <h3>Filter User</h3>
+            <button type="button">x</button>
+        </div>
+        <form id="filter-usr-form">
+            <div class="input-item">
+                <label for="" id="fiter-role-usr">Role</label>
+                
+                <select name="role-filter" id="role-filter-value">
+                    <option value="admin">Admin</option>
+                    <option value="editor">Editor</option>
+                    <option value="viewer">Viewer</option>
+                </select>
+            </div>
+            <div class="input-item">
+                <label for="" id="fiter-status-usr">Status</label>
+                
+                <select name="status-filter" id="filter-filter-value">
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+            </div>
+            <div class="button-wrap-dialog">
+                <button type="reset" id="reset-filter">Reset</button>
+                <button type="submit" id="filter-btn" class="save-btn">Apply</button>
+            </div>
+        </form>
+    </dialog>
+
     <dialog id="modal-add-user">
         <h3>Add User</h3>
         <form id="add-usr-form">
@@ -144,10 +174,10 @@
                 <button type="button" id="cencel-btn">Cencel</button>
                 <button type="submit" id="save-btn" class="save-btn">Save</button>
             </div>
-            
+
         </form>
     </dialog>
-    
+
     <!-- ========== DELETE USER DIALOG ============ -->
     <dialog id="modal-del-user">
         <div class="del-usr-icon">
@@ -204,11 +234,11 @@
                 <button type="button" id="cencel-edit-usr-btn">Cencel</button>
                 <button type="submit" id="save-edit-user-btn" class="save-btn">Save</button>
             </div>
-            
-            
+
+
         </form>
     </dialog>
-    
+
     <script type="module" src="js/app.js"></script>
 </body>
 
