@@ -140,7 +140,19 @@ deleteUserButtonYes.addEventListener('click', () => {
     const users = getUsers();
     console.log(users);
     
+});
+
+// =========== FILTER USER ================
+const filterBtn = document.getElementById('filter-btn')
+const modalFilterUser = document.getElementById('modal-filter-user');
+const closeFilterUser = document.getElementById('close-filter-user')
+filterBtn.addEventListener('click' , () => {
+    modalFilterUser.showModal();
+});
+closeFilterUser.addEventListener('click', () => {
+    modalFilterUser.close();
 })
+
 
 // ============= RENDER USER ============
 function renderUser(){
