@@ -153,7 +153,15 @@ closeFilterUser.addEventListener('click', () => {
     modalFilterUser.close();
 })
 
+// ====== RESET FORM FOR FILTER USER DIALOG ====
+const filterUsrForm = document.getElementById('filter-usr-form');
+const statusFilter = document.getElementById('status-filter-value');
+const roleFilter = document.getElementById('role-filter-value');
 
+filterUsrForm.addEventListener('reset' ,() => {
+    roleFilter.selectedIndex = 0;
+    statusFilter.selectedIndex = 0;
+})
 // ============= RENDER USER ============
 function renderUser(){
     const users = getUsers();
