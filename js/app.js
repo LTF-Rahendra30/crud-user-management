@@ -165,6 +165,9 @@ filterUsrForm.addEventListener('submit' , (event) => {
     
     const filteredUser = filterUser(filteredRole,filteredStatus,users);
 
+    console.log(filteredRole);
+    console.log(filteredStatus);
+    
     console.log(filteredUser);
     
     
