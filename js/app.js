@@ -1,4 +1,4 @@
-import { createUser,getUsers,deleteUser,editUser } from "./usersService.js";
+import { createUser,getUsers,deleteUser,editUser,filterUser } from "./usersService.js";
 
 
 const userList = document.getElementById('user-list');
@@ -156,6 +156,19 @@ closeFilterUser.addEventListener('click', () => {
 // ====== FORM FOR FILTER USER DIALOG ====
 const filterUsrForm = document.getElementById('filter-usr-form');
 
+filterUsrForm.addEventListener('submit' , (event) => {
+    event.preventDefault();
+    
+    const formData = new FormData(filterUsrForm);
+    const filteredRole = formData.get("role-filter");
+    const filteredStatus = formData.get("status-filter");
+    
+    const filteredUser = filterUser(filteredRole,filteredStatus,users);
+
+    console.log(filteredUser);
+    
+    
+})
 
 
 // ============= RENDER USER ============
