@@ -164,11 +164,13 @@ filterUsrForm.addEventListener('submit' , (event) => {
     const filteredStatus = formData.get("status-filter");
     
     filteredUser = filterUser(filteredRole,filteredStatus,users);
-
+    
     console.log(filteredRole);
     console.log(filteredStatus);
     
     console.log(filteredUser);
+    modalFilterUser.close();
+    filterUsrForm.reset();
     filteredUserRender();
 
     
