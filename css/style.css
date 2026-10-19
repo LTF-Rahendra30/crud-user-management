@@ -188,6 +188,9 @@ h1{
     flex-direction: column;
     gap: 1rem;
 }
+.user-filtered-mar-bottom{
+    margin-bottom: 1.2rem;
+}
 .user-card{
     padding: 1rem;
     border-radius: 10px;
