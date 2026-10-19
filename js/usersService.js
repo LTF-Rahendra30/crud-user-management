@@ -134,21 +134,12 @@ export function editUser(id,newName,newEmail,newRole,newStatus){
 // ======= FILTER USERS BY ROLE AND STATUS ========
 
 export function filterUser(role,status,userData){
-    let filteredUser = [];
-    const stringRole = String(role);
-    const stringStatus = String(status);
+    return userData.filter(user => {
+        const matchesRole = role === null || role === undefined || role === "" || user.role === role;
+        const matchesStatus = status === null || status === undefined || status === "" || user.status === status;
 
-    if(role === null || status === null){
-        filteredUser = userData.filter(user => {
-            return user.role ===stringRole || user.status === stringStatus;
-        })
-    }
-    else {
-        filteredUser = userData.filter(user => {
-            return user.role === stringRole && user.status === stringStatus;
-        })
-    }
-   return filteredUser;
+        return matchesRole && matchesStatus;
+    });
 }
 
 // ===== DELETE USER ======
