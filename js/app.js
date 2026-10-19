@@ -181,6 +181,7 @@ filterUsrForm.addEventListener('submit' , (event) => {
 const filteredUserList = document.getElementById('user-filtered');
 function filteredUserRender(){
     const usersFiltered = filteredUser;
+    filteredUserList.classList = 'user-filtered-mar-bottom';
     filteredUserList.innerHTML = usersFiltered.map(user => `
         <li class="user-card" data-user-id="${user.id}">
             <div class="user-information">
