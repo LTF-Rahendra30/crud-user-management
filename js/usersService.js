@@ -131,9 +131,18 @@ export function editUser(id,newName,newEmail,newRole,newStatus){
     return user;
 }
 
+// ======= FILTER USERS BY ROLE AND STATUS ========
 
+export function filterUser(role,status,userData){
+    const filteredUser = userData.filter(user => {
+        return user.role === role && user.status === status;
+   })
+   return filteredUser;
+}
 
 // ===== DELETE USER ======
 export function deleteUser(id){
     return users = users.filter(usr => usr.id !== id); 
 }
+
+// console.log(filterUser("editor","active",users));
