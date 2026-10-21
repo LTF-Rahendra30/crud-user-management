@@ -44,9 +44,6 @@ addUserForm.addEventListener('submit', (event) => {
 
 
 
-// ====== HENDLE EDIT USER =========
-const editUserForm = document.getElementById('edit-usr-form');
-const modalEditUser = document.getElementById('modal-edit-user');
 
 // ------ Listener to get li user target ---
 const cencelEditUserBtn = document.getElementById('cencel-edit-usr-btn');
@@ -55,12 +52,11 @@ const filteredUsersList = document.getElementById('user-filtered-list');
 let selectedUserId = null;
 let liUser = null;
 
-
+// ======== EVENTS DELEGATION WITH CALBACK FUNCTION =====
 userList.addEventListener('click', handleUserListClick)
 filteredUsersList.addEventListener('click',handleUserListClick);
 
 function handleUserListClick(event){
-    event.addEventListener('click', (event) => {
     const editButton = event.target.closest('.edit-btn');
     console.log(editButton);
     const deleteButton = event.target.closest('.delete-btn');
@@ -80,9 +76,9 @@ function handleUserListClick(event){
         
         if(!selectedUser) return;
         
-            editUserForm.querySelector('[name="name"]').value = selectedUser.name;
-            editUserForm.querySelector('[name="email"]').value = selectedUser.email;
-            editUserForm.querySelector('[name="role"]').value = selectedUser.role;
+        editUserForm.querySelector('[name="name"]').value = selectedUser.name;
+        editUserForm.querySelector('[name="email"]').value = selectedUser.email;
+        editUserForm.querySelector('[name="role"]').value = selectedUser.role;
         
         const statusInput = editUserForm.querySelector(
             `input[name="status"][value="${selectedUser.status}"]`
@@ -90,16 +86,19 @@ function handleUserListClick(event){
         
         if (statusInput) statusInput.checked = true; 
             modalEditUser.showModal();
-        } else if(deleteButton) {
-            modalDelUser.showModal();
-        }
-    
-    })
+        } 
+        
+    else {
+        modalDelUser.showModal();
+    }
 }
 
 
 
 
+// ====== HENDLE EDIT USER =========
+const editUserForm = document.getElementById('edit-usr-form');
+const modalEditUser = document.getElementById('modal-edit-user');
 // ======= LISTENER TO HENDLE YES COMIRM FOR EDIT USER =======
 editUserForm.addEventListener('submit', (event) => {
     event.preventDefault();
