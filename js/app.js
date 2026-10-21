@@ -50,11 +50,17 @@ const modalEditUser = document.getElementById('modal-edit-user');
 
 // ------ Listener to get li user target ---
 const cencelEditUserBtn = document.getElementById('cencel-edit-usr-btn');
+const filteredUsersList = document.getElementById('user-filtered-list');
 
 let selectedUserId = null;
 let liUser = null;
 
-userList.addEventListener('click', (event) => {
+
+userList.addEventListener('click', handleUserListClick)
+filteredUsersList.addEventListener('click',handleUserListClick);
+
+function handleUserListClick(event){
+    event.addEventListener('click', (event) => {
     const editButton = event.target.closest('.edit-btn');
     console.log(editButton);
     const deleteButton = event.target.closest('.delete-btn');
@@ -74,22 +80,25 @@ userList.addEventListener('click', (event) => {
         
         if(!selectedUser) return;
         
-        editUserForm.querySelector('[name="name"]').value = selectedUser.name;
-        editUserForm.querySelector('[name="email"]').value = selectedUser.email;
-        editUserForm.querySelector('[name="role"]').value = selectedUser.role;
+            editUserForm.querySelector('[name="name"]').value = selectedUser.name;
+            editUserForm.querySelector('[name="email"]').value = selectedUser.email;
+            editUserForm.querySelector('[name="role"]').value = selectedUser.role;
         
         const statusInput = editUserForm.querySelector(
             `input[name="status"][value="${selectedUser.status}"]`
         )
         
-        if (statusInput) statusInput.checked = true;
-        
-        modalEditUser.showModal();
-    } else if(deleteButton) {
-        modalDelUser.showModal();
-    }
+        if (statusInput) statusInput.checked = true; 
+            modalEditUser.showModal();
+        } else if(deleteButton) {
+            modalDelUser.showModal();
+        }
     
-})
+    })
+}
+
+
+
 
 // ======= LISTENER TO HENDLE YES COMIRM FOR EDIT USER =======
 editUserForm.addEventListener('submit', (event) => {
@@ -163,7 +172,7 @@ filterUsrForm.addEventListener('submit' , (event) => {
     const filteredRole = formData.get("role-filter");
     const filteredStatus = formData.get("status-filter");
     
-    filteredUser = filterUser(filteredRole,filteredStatus,users);
+    filteredUser = filterUser(filteredRole,filteredStatus,getUsers());
     
     filteredSection.style.display = 'block';
     console.log(filteredRole);
@@ -182,7 +191,7 @@ filterUsrForm.addEventListener('submit' , (event) => {
 const filteredSection = document.getElementById('filtered-user');
 filteredSection.style.display = 'none';
 const filterSectionParagraph = document.getElementById('filter-usr-info');
-const filteredUsersList = document.getElementById('user-filtered-list');
+
 
 function filteredUserRender(){
     const usersFiltered = filteredUser;
