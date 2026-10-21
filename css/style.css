@@ -183,7 +183,7 @@ h1{
     margin-bottom:1.5rem;
 }
 /* =========== USER CARD =========== */
-#user-list, #user-filtered {
+#user-list, #user-filtered-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
