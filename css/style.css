@@ -258,7 +258,9 @@ h1{
 .user-descrb p{
     color: var(--primary-paragraph-color);
 }
-
+.user-status-role{
+    margin-top: 0.8rem;
+}
 .user-status-role span{
     padding: 6px 12px;
     border-radius: 25px;
