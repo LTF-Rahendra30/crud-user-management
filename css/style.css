@@ -246,6 +246,20 @@ h1{
 .user-del-edit .edit-btn{
     background-color: var(--primary-blue);
 }
+/* --------- USER INFORMATION ------------ */
+.user-descrb h4{
+    color: var(--primary-dark);
+}
+.user-descrb p{
+    color: var(--primary-paragraph-color);
+}
+
+
+
+
+
+
+
 
 /* ========= FILTERED SECTION ============= */
 #filter-usr-info{
