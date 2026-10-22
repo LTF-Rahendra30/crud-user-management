@@ -168,8 +168,8 @@ filterUsrForm.addEventListener('submit' , (event) => {
     event.preventDefault();
     
     const formData = new FormData(filterUsrForm);
-    const filteredRole = formData.get("role-filter");
-    const filteredStatus = formData.get("status-filter");
+    const filteredRole = formData.get("role");
+    const filteredStatus = formData.get("status");
     
     filteredUser = filterUser(filteredRole,filteredStatus,getUsers());
     
