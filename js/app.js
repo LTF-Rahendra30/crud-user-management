@@ -116,6 +116,8 @@ editUserForm.addEventListener('submit', (event) => {
     modalEditUser.close();
     editUserForm.reset();
     renderMainPage();
+    // --- FILTERED USER RENDER AGAIN IF EDIT USER FROM FILTERED USER ----
+    filteredUserRender();
 });
 
 
