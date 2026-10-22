@@ -135,15 +135,15 @@
                 <legend>User Role</legend>
                 <div class="filter-choose-wrap">
                     <label for="filter-admin-role">
-                        <input type="radio" name="role" id="filter-admin-role" value="admin">
+                        <input type="radio" name="role" id="filter-admin-role" value="admin" required>
                         Admin
                     </label>
                     <label for="filter-editor-role">
-                        <input type="radio" name="role" id="filter-editor-role" value="editor">
+                        <input type="radio" name="role" id="filter-editor-role" value="editor" required>
                         Editor
                     </label>
                     <label for="filter-viewer-role">
-                        <input type="radio" name="role" id="filter-viewer-role" value="viewer">
+                        <input type="radio" name="role" id="filter-viewer-role" value="viewer" required>
                         Viewer
                     </label>
                 </div>
@@ -152,16 +152,16 @@
                 <legend>User Status</legend>
                 <div class="filter-choose-wrap">
                     <label for="filter-inactive-status">
-                        <input type="radio" name="status" id="filter-inactive-status" value="inactive">
+                        <input type="radio" name="status" id="filter-inactive-status" value="inactive" required>
                         Inactive
                     </label>
                     <label for="filter-active-status">
-                        <input type="radio" name="status" id="filter-active-status" value="active">
+                        <input type="radio" name="status" id="filter-active-status" value="active" required>
                         Active
                     </label>
                 </div>
             </fieldset>
-            
+
             <div class="button-wrap-dialog">
                 <button type="reset" id="reset-filter">Reset</button>
                 <button type="submit" id="apply-filter-btn" class="save-btn">Apply</button>
