@@ -247,6 +247,11 @@ h1{
     background-color: var(--primary-blue);
 }
 /* --------- USER INFORMATION ------------ */
+.user-descrb{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
 .user-descrb h4{
     color: var(--primary-dark);
 }
