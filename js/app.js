@@ -136,21 +136,6 @@ cencelDelUserBtn.addEventListener('click',() =>{
     modalDelUser.close();
 });
 
-// ------ LISTENER TO HENDLE YES COMIRM FOR DELETE USER -------
-const users = getUsers();
-console.log(users);
-deleteUserButtonYes.addEventListener('click', () => {
-    if(selectedUserId === null) return;
-    
-    deleteUser(selectedUserId);
-    selectedUserId = null;
-    
-    modalDelUser.close();
-    renderMainPage();
-    const users = getUsers();
-    console.log(users);
-    
-});
 
 // =========== FILTER USER ================
 const filterBtn = document.getElementById('filter-btn')
@@ -166,12 +151,37 @@ closeFilterUser.addEventListener('click', () => {
 // ====== FORM FOR FILTER USER DIALOG ====
 const filterUsrForm = document.getElementById('filter-usr-form');
 let filteredUser;
+let filteredRole;
+let filteredStatus;
+
+// ------ LISTENER TO HENDLE YES COMIRM FOR DELETE USER -------
+const users = getUsers();
+console.log(users);
+deleteUserButtonYes.addEventListener('click', () => {
+    if(selectedUserId === null) return;
+    
+    deleteUser(selectedUserId);
+    selectedUserId = null;
+    
+    filterUser(filteredRole,filteredStatus,getUsers());
+
+    modalDelUser.close();
+    renderMainPage();
+    filteredUserRender();
+
+    // Render with filtered again
+
+    const users = getUsers();
+    console.log(users);
+    
+});
+
 filterUsrForm.addEventListener('submit' , (event) => {
     event.preventDefault();
     
     const formData = new FormData(filterUsrForm);
-    const filteredRole = formData.get("role");
-    const filteredStatus = formData.get("status");
+    filteredRole = formData.get("role");
+    filteredStatus = formData.get("status");
     
     filteredUser = filterUser(filteredRole,filteredStatus,getUsers());
     
