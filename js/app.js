@@ -163,7 +163,7 @@ deleteUserButtonYes.addEventListener('click', () => {
     deleteUser(selectedUserId);
     selectedUserId = null;
     
-    filterUser(filteredRole,filteredStatus,getUsers());
+    filteredUser = filterUser(filteredRole,filteredStatus,getUsers());
 
     modalDelUser.close();
     renderMainPage();
