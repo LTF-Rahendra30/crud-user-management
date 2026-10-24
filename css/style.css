@@ -3,11 +3,14 @@
     --sidebar-width: clamp(160px,18vw,200px);
     --primary-dark: #192747;
     --primary-blue: #316BFA;
+    --soft-blue: #E2EBFD;
     --primary-white: #fff;
     --primary-red: #FD4F51;
     --text-color:  #5d6c94;
     --label-color:  #2e3a59;
     --primary-paragraph-color: #434e6e;
+    --primary-purple: #7E28E8;
+    --soft-purple: #EBE1FE;
 }
 *{
     padding: 0;
@@ -280,6 +283,11 @@ h1{
 
 #filter-usr-info p span{
     font-weight: bold;
+}
+
+.admin-badge{
+    background-color: var(--soft-purple);
+    color: var(--primary-purple);
 }
 /* ========== MEDIA QUERY ========= */
 
