@@ -206,7 +206,7 @@ const filterSectionParagraph = document.getElementById('filter-usr-info');
 
 function filteredUserRender(){
     const usersFiltered = filteredUser;
-    filterSectionParagraph.textContent = `${usersFiltered.length} Users found after filtering`
+    filterSectionParagraph.textContent = `<span>${usersFiltered.length}</span> Users found after filtering about <span>${filteredRole}</span> and <span>${filteredStatus}</span>`
     // ----- FILTERED USR LIST -------
     filteredUsersList.innerHTML = usersFiltered.map(user => `
         <li class="user-card" data-user-id="${user.id}">
