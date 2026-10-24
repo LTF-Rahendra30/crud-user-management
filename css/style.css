@@ -278,7 +278,9 @@ h1{
     font-weight: 500;
 }
 
-
+#filter-usr-info p span{
+    font-weight: bold;
+}
 /* ========== MEDIA QUERY ========= */
 
 /* ------ MINI PHONE ---------- */
