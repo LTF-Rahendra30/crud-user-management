@@ -301,7 +301,7 @@ function renderBagdeCardStyle(){
         } else if(roleBagde.textContent.trim() === 'editor'){
             roleBagde.classList.add('editor-badge');
         }else if(roleBagde.textContent.trim() === 'viewer'){
-            roleBagde.classList.add('viewer-bagde');
+            roleBagde.classList.add('viewer-badge');
         }
 
         if(statusBagde.textContent.trim() === 'active'){

@@ -299,7 +299,7 @@ h1{
     background-color: var(--soft-blue);
     color: var(--primary-blue);
 }
-.viewer-bagde{
+.viewer-badge{
     background-color: var(--soft-grey);
     color: var(--text-color);
 }
