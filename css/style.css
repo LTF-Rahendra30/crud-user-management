@@ -9,9 +9,14 @@
     --label-color:  #2e3a59;
     --primary-paragraph-color: #434e6e;
     --primary-purple: #7E28E8;
+    --primary-green: #1d9f2c;
+
     --soft-purple: #EBE1FE;
     --soft-blue: #E2EBFD;
     --soft-grey: #E9EEFA;
+    --soft-green: #DEF6EA;
+    --soft-red: #FEE4E3;
+
 }
 *{
     padding: 0;
@@ -297,6 +302,15 @@ h1{
 .viewer-bagde{
     background-color: var(--soft-grey);
     color: var(--text-color);
+}
+
+.active-badge{
+    background-color: var(--soft-green);
+    color: var(--primary-green);
+}
+.inactive-badge{
+    background-color: var(--soft-red);
+    color: var(--primary-red);
 }
 /* ========== MEDIA QUERY ========= */
 
