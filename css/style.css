@@ -285,7 +285,7 @@ h1{
     font-weight: bold;
 }
 
-.admin-badge{
+.user-status-role .admin-badge{
     background-color: var(--soft-purple);
     color: var(--primary-purple);
 }
