@@ -3,7 +3,6 @@
     --sidebar-width: clamp(160px,18vw,200px);
     --primary-dark: #192747;
     --primary-blue: #316BFA;
-    --soft-blue: #E2EBFD;
     --primary-white: #fff;
     --primary-red: #FD4F51;
     --text-color:  #5d6c94;
@@ -11,6 +10,7 @@
     --primary-paragraph-color: #434e6e;
     --primary-purple: #7E28E8;
     --soft-purple: #EBE1FE;
+    --soft-blue: #E2EBFD;
 }
 *{
     padding: 0;
@@ -289,6 +289,11 @@ h1{
     background-color: var(--soft-purple);
     color: var(--primary-purple);
 }
+.editor-badge{
+    background-color: var(--soft-blue);
+    color: var(--primary-blue);
+}
+
 /* ========== MEDIA QUERY ========= */
 
 /* ------ MINI PHONE ---------- */
