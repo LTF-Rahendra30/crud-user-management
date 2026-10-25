@@ -250,6 +250,7 @@ function filteredUserRender(){
         </li>
         
     `).join("");
+    renderBagdeCardStyle();
 }
 
 // ============= RENDER USER ============
@@ -308,11 +309,9 @@ function renderBagdeCardStyle(){
         }else if(statusBagde.textContent.trim() === 'inactive'){
             statusBagde.classList.add('inactive-badge');
         }
-    });
-    // const users = getUsers();
-    
+    });    
 }
-// console.log(userCard);
+
 
 // ===== RENDER MAIN PAGE =====
 function renderMainPage(){
