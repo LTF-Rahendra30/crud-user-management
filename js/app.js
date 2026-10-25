@@ -289,8 +289,8 @@ function renderUser(){
     `).join("");
 }
 // ====== ROLE BAGDE STYLE =====
-const userCard = document.querySelectorAll('.user-card')
 function renderBagdeCardStyle(){
+    const userCard = document.querySelectorAll('.user-card');
     userCard.forEach(card => {
         const roleBagde = card.querySelector('.role');
         const statusBagde = card.querySelector('.status');
