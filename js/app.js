@@ -288,9 +288,25 @@ function renderUser(){
         </li>
     `).join("");
 }
+// ====== ROLE BAGDE STYLE =====
+const userCard = document.querySelectorAll('.user-card')
+function renderBagdeCardStyle(){
+    userCard.forEach(card => {
+        const roleBagde = card.querySelector('.role');
+        const statusBagde = card.querySelector('.status');
+
+        if(roleBagde.textContent.includes('admin')){
+            roleBagde.classList.add('admin-badge')
+        }
+    });
+    // const users = getUsers();
+    
+}
+// console.log(userCard);
 
 // ===== RENDER MAIN PAGE =====
 function renderMainPage(){
     renderUser();
+    renderBagdeCardStyle();
 }
 renderMainPage();
