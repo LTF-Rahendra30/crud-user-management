@@ -267,7 +267,7 @@ h1{
 .user-status-role span{
     padding: 6px 12px;
     border-radius: 25px;
-    background-color: #dcdcdc;
+    font-weight: 500;
 }
 
 
@@ -285,7 +285,7 @@ h1{
     font-weight: bold;
 }
 
-.user-status-role .admin-badge{
+.admin-badge{
     background-color: var(--soft-purple);
     color: var(--primary-purple);
 }
