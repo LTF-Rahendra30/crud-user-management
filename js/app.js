@@ -299,6 +299,8 @@ function renderBagdeCardStyle(){
             roleBagde.classList.add('admin-badge')
         } else if(roleBagde.textContent.trim() === 'editor'){
             roleBagde.classList.add('editor-badge');
+        }else if(roleBagde.textContent.trim() === 'viewer'){
+            roleBagde.classList.add('viewer-bagde');
         }
     });
     // const users = getUsers();
