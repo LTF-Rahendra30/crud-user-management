@@ -1,3 +1,4 @@
+
 import { createUser,getUsers,deleteUser,editUser,filterUser } from "./usersService.js";
 
 
@@ -224,8 +225,8 @@ function filteredUserRender(){
                     <h4>${user.name}</h4>
                     <p>${user.email}</p>
                     <div class="user-status-role">
-                        <span class="role">${user.role}</span>
-                        <span class="status">${user.status}</span>
+                        <span class="role ${user.role}-badge">${user.role}</span>
+                        <span class="status ${user.status}-badge">${user.status}</span>
                     </div>
                 </div>
             </div>
@@ -250,7 +251,7 @@ function filteredUserRender(){
         </li>
         
     `).join("");
-    renderBagdeCardStyle();
+    // renderBagdeCardStyle();
 }
 
 // ============= RENDER USER ============
@@ -268,8 +269,8 @@ function renderUser(){
                     <h4>${user.name}</h4>
                     <p>${user.email}</p>
                     <div class="user-status-role">
-                        <span class="role">${user.role}</span>
-                        <span class="status">${user.status}</span>
+                        <span class="role ${user.role}-badge">${user.role}</span>
+                        <span class="status ${user.status}-badge">${user.status}</span>
                     </div>
                 </div>
             </div>
@@ -289,33 +290,34 @@ function renderUser(){
         </li>
     `).join("");
 }
-// // ====== ROLE BAGDE STYLE =====
-function renderBagdeCardStyle(){
-    const userCard = document.querySelectorAll('.user-card');
-    userCard.forEach(card => {
-        const roleBagde = card.querySelector('.role');
-        const statusBagde = card.querySelector('.status');
+// ====== THIS FUNCTION IS NO LONGER NEEDED =====
+// // // ====== ROLE BAGDE STYLE =====
+// function renderBagdeCardStyle(){
+//     const userCard = document.querySelectorAll('.user-card');
+//     userCard.forEach(card => {
+//         const roleBagde = card.querySelector('.role');
+//         const statusBagde = card.querySelector('.status');
 
-        if(roleBagde.textContent.trim() === 'admin'){
-            roleBagde.classList.add('admin-badge')
-        } else if(roleBagde.textContent.trim() === 'editor'){
-            roleBagde.classList.add('editor-badge');
-        }else if(roleBagde.textContent.trim() === 'viewer'){
-            roleBagde.classList.add('viewer-badge');
-        }
+//         if(roleBagde.textContent.trim() === 'admin'){
+//             roleBagde.classList.add('admin-badge')
+//         } else if(roleBagde.textContent.trim() === 'editor'){
+//             roleBagde.classList.add('editor-badge');
+//         }else if(roleBagde.textContent.trim() === 'viewer'){
+//             roleBagde.classList.add('viewer-badge');
+//         }
 
-        if(statusBagde.textContent.trim() === 'active'){
-            statusBagde.classList.add('active-badge');
-        }else if(statusBagde.textContent.trim() === 'inactive'){
-            statusBagde.classList.add('inactive-badge');
-        }
-    });    
-}
+//         if(statusBagde.textContent.trim() === 'active'){
+//             statusBagde.classList.add('active-badge');
+//         }else if(statusBagde.textContent.trim() === 'inactive'){
+//             statusBagde.classList.add('inactive-badge');
+//         }
+//     });
+// }
+
 
 
 // ===== RENDER MAIN PAGE =====
 function renderMainPage(){
     renderUser();
-    renderBagdeCardStyle();
 }
 renderMainPage();
