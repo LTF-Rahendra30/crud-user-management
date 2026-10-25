@@ -288,15 +288,17 @@ function renderUser(){
         </li>
     `).join("");
 }
-// ====== ROLE BAGDE STYLE =====
+// // ====== ROLE BAGDE STYLE =====
 function renderBagdeCardStyle(){
     const userCard = document.querySelectorAll('.user-card');
     userCard.forEach(card => {
         const roleBagde = card.querySelector('.role');
         const statusBagde = card.querySelector('.status');
 
-        if(roleBagde.textContent.includes('admin')){
+        if(roleBagde.textContent.trim() === 'admin'){
             roleBagde.classList.add('admin-badge')
+        } else if(roleBagde.textContent.trim() === 'editor'){
+            roleBagde.classList.add('editor-badge');
         }
     });
     // const users = getUsers();
