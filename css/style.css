@@ -11,6 +11,7 @@
     --primary-purple: #7E28E8;
     --soft-purple: #EBE1FE;
     --soft-blue: #E2EBFD;
+    --soft-grey: #E9EEFA;
 }
 *{
     padding: 0;
@@ -293,7 +294,10 @@ h1{
     background-color: var(--soft-blue);
     color: var(--primary-blue);
 }
-
+.viewer-bagde{
+    background-color: var(--soft-grey);
+    color: var(--text-color);
+}
 /* ========== MEDIA QUERY ========= */
 
 /* ------ MINI PHONE ---------- */
