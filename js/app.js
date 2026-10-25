@@ -302,6 +302,12 @@ function renderBagdeCardStyle(){
         }else if(roleBagde.textContent.trim() === 'viewer'){
             roleBagde.classList.add('viewer-bagde');
         }
+
+        if(statusBagde.textContent.trim() === 'active'){
+            statusBagde.classList.add('active-badge');
+        }else if(statusBagde.textContent.trim() === 'inactive'){
+            statusBagde.classList.add('inactive-badge');
+        }
     });
     // const users = getUsers();
     
