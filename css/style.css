@@ -577,7 +577,10 @@ dialog::backdrop{
 /* --- FILTER OPTION ------ */
 
 .filter-choose-wrap input[type="radio"]{
-    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .filter-choose-wrap{
@@ -589,4 +592,11 @@ dialog::backdrop{
     background-color: var(--soft-blue);
     padding: 6px 14px;
     border-radius: 25px;
+    user-select: none;
+    border: 1.5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.filter-choose-wrap input[type="radio"]:checked  + label{
+    border: 1.5px solid var(--label-color);
 }
