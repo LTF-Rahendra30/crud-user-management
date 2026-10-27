@@ -198,6 +198,21 @@ filterUsrForm.addEventListener('submit' , (event) => {
     
     
 })
+// ========= SEARCH USER =============
+const searchBtn = document.getElementById('search-button');
+const searchForm = document.getElementById('search-form');
+
+searchForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    console.log("WPWPWPWPPW");
+    
+})
+
+
+
+
+
 
 // ====== FILTERED USER RENDER ======
 const filteredSection = document.getElementById('filtered-user');
