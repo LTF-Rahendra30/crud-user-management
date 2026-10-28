@@ -1,84 +1,84 @@
 let users = [
     {
         id: 1,
-        name: "Budi Santoso",
+        name: "budi santoso",
         email: "budi@example.com",
         status: "active",
         role: "admin"
     },
     {
         id: 2,
-        name: "Sari Dewi",
+        name: "sari dewi",
         email: "sari@example.com",
         status: "active",
         role: "editor"
     },
     {
         id: 3,
-        name: "Andi Pratama",
+        name: "andi pratama",
         email: "andi@example.com",
         status: "active",
         role: "viewer"
     },
     {
         id: 4,
-        name: "Dewi Lestari",
+        name: "dewi lestari",
         email: "dewi@example.com",
         status: "inactive",
         role: "editor"
     },
     {
         id: 5,
-        name: "Rizky Kurniawan",
+        name: "rizky kurniawan",
         email: "rizky@example.com",
         status: "active",
         role: "viewer"
     },
     {
         id: 6,
-        name: "Nadia Putri",
+        name: "nadia putri",
         email: "nadia@example.com",
         status: "inactive",
         role: "admin"
     },
     {
         id: 7,
-        name: "Fajar Ramadhan",
+        name: "fajar ramadhan",
         email: "fajar@example.com",
         status: "active",
         role: "editor"
     },
     {
         id: 8,
-        name: "Intan Permata",
+        name: "intan permata",
         email: "intan@example.com",
         status: "active",
         role: "viewer"
     },
     {
         id: 9,
-        name: "Reza Maulana",
+        name: "reza maulana",
         email: "reza@example.com",
         status: "inactive",
         role: "viewer"
     },
     {
         id: 10,
-        name: "Putri Amelia",
+        name: "putri amelia",
         email: "putri@example.com",
         status: "active",
         role: "admin"
     },
     {
         id: 11,
-        name: "Dimas Saputra",
+        name: "dimas saputra",
         email: "dimas@example.com",
         status: "inactive",
         role: "editor"
     },
     {
         id: 12,
-        name: "Alya Safitri",
+        name: "alya safitri",
         email: "alya@example.com",
         status: "active",
         role: "viewer"
