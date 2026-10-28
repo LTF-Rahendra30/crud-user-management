@@ -202,10 +202,14 @@ filterUsrForm.addEventListener('submit' , (event) => {
 const searchBtn = document.getElementById('search-button');
 const searchForm = document.getElementById('search-form');
 
+let searchUsr;
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    console.log("WPWPWPWPPW");
+    const formData = new FormData(searchForm);
+    searchUsr = formData.get("search-input");
+    console.log(searchUsr);
+    
     
 })
 
