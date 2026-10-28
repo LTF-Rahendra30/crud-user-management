@@ -1,5 +1,5 @@
 
-import { createUser,getUsers,deleteUser,editUser,filterUser } from "./usersService.js";
+import { createUser,getUsers,deleteUser,editUser,filterUser,searchUser } from "./usersService.js";
 
 
 const userList = document.getElementById('user-list');
@@ -199,7 +199,6 @@ filterUsrForm.addEventListener('submit' , (event) => {
     
 })
 // ========= SEARCH USER =============
-const searchBtn = document.getElementById('search-button');
 const searchForm = document.getElementById('search-form');
 
 let searchUsr;
@@ -208,13 +207,16 @@ searchForm.addEventListener('submit', (event) => {
 
     const formData = new FormData(searchForm);
     searchUsr = formData.get("search-input");
-    console.log(searchUsr);
+    const usersSearched = searchUser(searchUsr,getUsers());
+
+    console.log(usersSearched);
+    
     
     
 })
 
 
-
+// ======= SEARCED USER RENDER =======
 
 
 
