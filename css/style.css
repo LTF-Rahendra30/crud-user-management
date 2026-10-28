@@ -142,12 +142,20 @@ h1{
 .search-section{
     margin: 1.5rem 0;
 
- }
-#searchForm{
+}
+.search-content-wrap{
     display: flex;
+    gap: 1rem;
+    align-items: center;
+    
+}
+#search-form{
+    display: flex;
+    flex: 1;
     gap: 10px;
     height: 3rem;
     align-items: center;
+    min-width: 0;
     
 }
 .search-input-wrapper{
@@ -166,6 +174,7 @@ h1{
     width: 100%;
     background-color: transparent;
 }
+
 /* ----- BUTTON ----- */
 #search-button{
     border: none;
