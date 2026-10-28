@@ -143,7 +143,7 @@ export function filterUser(role,status,userData){
 }
 export function searchUser(username,userData){
     return userData.filter(user => {
-        const users = username.includes(user.name);
+        const users = user.name.includes(username.toLowerCase());
         return users;
     });
 }
@@ -153,4 +153,4 @@ export function deleteUser(id){
 }
 
 // console.log(filterUser("editor","active",users));
-console.log(searchUser("budi",users));
+console.log(searchUser("Budi",users));
