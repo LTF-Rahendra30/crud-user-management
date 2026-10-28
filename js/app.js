@@ -231,7 +231,7 @@ const searchInfoContent = document.getElementById('search-info');
 
 function searchedUserRender(){
     searchInfoContent.innerHTML = `
-    <span>${usersSearched.length}</span> Users found after filtering about <span>${searchUsr}</span></p>`
+    <p><span>${usersSearched.length}</span> Users found after filtering about <span>${searchUsr}</span></p>`
 }
 
 // ====== FILTERED USER RENDER ======
