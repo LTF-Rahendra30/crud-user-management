@@ -141,10 +141,16 @@ export function filterUser(role,status,userData){
         return matchesRole && matchesStatus;
     });
 }
-
+export function searchUser(username,userData){
+    return userData.filter(user => {
+        const users = username.includes(user.name);
+        return users;
+    });
+}
 // ===== DELETE USER ======
 export function deleteUser(id){
     return users = users.filter(usr => usr.id !== id); 
 }
 
 // console.log(filterUser("editor","active",users));
+console.log(searchUser("budi",users));
