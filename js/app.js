@@ -230,6 +230,8 @@ searchSection.style.display = 'none';
 const searchInfoContent = document.getElementById('search-info');
 
 function searchedUserRender(){
+    filteredSection.style.display = 'none';
+    
     searchInfoContent.innerHTML = `
     <p><span>${usersSearched.length}</span> Users found after filtering about <span>${searchUsr}</span></p>`
 }
@@ -241,6 +243,8 @@ const filterSectionParagraph = document.getElementById('filter-usr-info');
 
 
 function filteredUserRender(){
+    searchSection.style.display = 'none';
+
     const usersFiltered = filteredUser;
     filterSectionParagraph.innerHTML = `<p>
         <span>${usersFiltered.length}</span> Users found after filtering about <span>${filteredRole}</span> and <span>${filteredStatus}</span>
