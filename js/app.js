@@ -177,6 +177,7 @@ deleteUserButtonYes.addEventListener('click', () => {
     
 });
 
+// ========= FITERED USER FORM =============
 filterUsrForm.addEventListener('submit' , (event) => {
     event.preventDefault();
     
@@ -202,23 +203,36 @@ filterUsrForm.addEventListener('submit' , (event) => {
 const searchForm = document.getElementById('search-form');
 
 let searchUsr;
+let usersSearched;
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const formData = new FormData(searchForm);
     searchUsr = formData.get("search-input");
-    const usersSearched = searchUser(searchUsr,getUsers());
+    usersSearched = searchUser(searchUsr,getUsers());
 
-    console.log(usersSearched);
     
+    searchSection.style.display = 'block';
+    if(usersSearched.length === 0) console.log("Not found");
+    else {
+        console.log(usersSearched);
+        searchedUserRender();
+        
+    }
     
     
 })
 
 
 // ======= SEARCED USER RENDER =======
+const searchSection = document.getElementById('search-user-container');
+searchSection.style.display = 'none';
+const searchInfoContent = document.getElementById('search-info');
 
-
+function searchedUserRender(){
+    searchInfoContent.innerHTML = `
+    <span>${usersSearched.length}</span> Users found after filtering about <span>${searchUsr}</span></p>`
+}
 
 // ====== FILTERED USER RENDER ======
 const filteredSection = document.getElementById('filtered-user');
