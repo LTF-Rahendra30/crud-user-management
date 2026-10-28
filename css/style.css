@@ -292,12 +292,12 @@ h1{
 
 
 /* ========= FILTERED SECTION ============= */
-#filter-usr-info{
+#filter-usr-info, #search-info{
     color: var(--primary-paragraph-color);
     font-weight: 500;
 }
 
-#filter-usr-info p span{
+#filter-usr-info p span,#search-info p span{
     font-weight: bold;
 }
 
