@@ -82,7 +82,21 @@ let users = [
         email: "alya@example.com",
         status: "active",
         role: "viewer"
-    }
+    },
+    {
+        id: 13,
+        name: "budi jokowasanti",
+        email: "budi@example.com",
+        status: "active",
+        role: "admin"
+    },
+    {
+        id: 14,
+        name: "budi wawok",
+        email: "budi@example.com",
+        status: "active",
+        role: "admin"
+    },
 ];
 
 
