@@ -53,9 +53,6 @@ const filteredUsersList = document.getElementById('user-filtered-list');
 let selectedUserId = null;
 let liUser = null;
 
-// ======== EVENTS DELEGATION WITH CALBACK FUNCTION =====
-userList.addEventListener('click', handleUserListClick)
-filteredUsersList.addEventListener('click',handleUserListClick);
 
 function handleUserListClick(event){
     const editButton = event.target.closest('.edit-btn');
@@ -147,7 +144,7 @@ filterBtn.addEventListener('click' , () => {
 });
 closeFilterUser.addEventListener('click', () => {
     modalFilterUser.close();
-})
+});
 
 // ====== FORM FOR FILTER USER DIALOG ====
 const filterUsrForm = document.getElementById('filter-usr-form');
@@ -235,7 +232,7 @@ function searchedUserRender(){
     filteredSection.style.display = 'none';
 
     searchInfoContent.innerHTML = `
-    <p><span>${usersSearched.length}</span> Users found after filtering about <span>${searchUsr}</span></p>`
+    <p><span>${usersSearched.length}</span> Users found about <span>${searchUsr}</span></p>`
 
     // --- render usr list -----
     searchedUserList.innerHTML = searcedUsers.map(user => `
@@ -401,4 +398,9 @@ function renderUser(){
 function renderMainPage(){
     renderUser();
 }
+// ======== EVENTS DELEGATION WITH CALBACK FUNCTION =====
+userList.addEventListener('click', handleUserListClick)
+filteredUsersList.addEventListener('click',handleUserListClick);
+searchedUserList.addEventListener('click',handleUserListClick);
+
 renderMainPage();
