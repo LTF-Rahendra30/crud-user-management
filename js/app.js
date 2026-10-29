@@ -216,6 +216,7 @@ searchForm.addEventListener('submit', (event) => {
         searchInfoContent.style.display = 'none';
         searchedUserList.style.display = 'none';
         notFoundContainer.classList.add('not-found-container-wrap');
+        notFoundContainer.classList.remove('not-found-container-none');
         notFoundSearchRender();
     } 
     else {
