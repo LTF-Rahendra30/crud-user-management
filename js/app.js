@@ -113,13 +113,11 @@ editUserForm.addEventListener('submit', (event) => {
     
     modalEditUser.close();
     editUserForm.reset();
+    renderMainPage();
+
     // --- FILTERED USER RENDER AGAIN IF EDIT USER FROM FILTERED USER ----
     filteredUserRender();
     
-    // ---- SEARCHED USER LIST RENDER AGAIN ----
-    usersSearched = searchUser(searchUsr,getUsers());
-    searchedUserRender();
-    renderMainPage();
 });
 
 
@@ -173,9 +171,6 @@ deleteUserButtonYes.addEventListener('click', () => {
     // -- Render with filtered again ---
     filteredUserRender();
     
-    // -- Render with searced user list again ---
-    searchedUserRender();
-    
     const users = getUsers();
     console.log(users);
     
@@ -217,8 +212,17 @@ searchForm.addEventListener('submit', (event) => {
 
     
     searchSection.style.display = 'block';
-    if(usersSearched.length === 0) notFoundSearchRender();
+    if(usersSearched.length === 0){
+        searchInfoContent.style.display = 'none';
+        searchedUserList.style.display = 'none';
+        notFoundContainer.style.display = 'block';
+        notFoundSearchRender();
+    } 
     else {
+        notFoundContainer.style.display = 'none';
+        
+        searchInfoContent.style.display = 'block';
+        searchedUserList.style.display = 'flex';
         console.log(usersSearched);
         searchedUserRender();
         
@@ -420,6 +424,6 @@ function renderMainPage(){
 // ======== EVENTS DELEGATION WITH CALBACK FUNCTION =====
 userList.addEventListener('click', handleUserListClick)
 filteredUsersList.addEventListener('click',handleUserListClick);
-searchedUserList.addEventListener('click',handleUserListClick);
+
 
 renderMainPage();
