@@ -215,11 +215,12 @@ searchForm.addEventListener('submit', (event) => {
     if(usersSearched.length === 0){
         searchInfoContent.style.display = 'none';
         searchedUserList.style.display = 'none';
-        notFoundContainer.style.display = 'block';
+        notFoundContainer.classList.add('not-found-container-wrap');
         notFoundSearchRender();
     } 
     else {
-        notFoundContainer.style.display = 'none';
+        notFoundContainer.classList.add('not-found-container-none');
+        notFoundContainer.classList.remove('not-found-container-wrap');
         
         searchInfoContent.style.display = 'block';
         searchedUserList.style.display = 'flex';
