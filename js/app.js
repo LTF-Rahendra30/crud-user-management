@@ -113,9 +113,14 @@ editUserForm.addEventListener('submit', (event) => {
     
     modalEditUser.close();
     editUserForm.reset();
-    renderMainPage();
     // --- FILTERED USER RENDER AGAIN IF EDIT USER FROM FILTERED USER ----
     filteredUserRender();
+    
+    // ---- SEARCHED USER LIST RENDER AGAIN ----
+    usersSearched = searchUser(searchUsr,getUsers());
+    
+    searchedUserRender();
+    renderMainPage();
 });
 
 
@@ -165,10 +170,13 @@ deleteUserButtonYes.addEventListener('click', () => {
 
     modalDelUser.close();
     renderMainPage();
+    
+    // -- Render with filtered again ---
     filteredUserRender();
-
-    // Render with filtered again
-
+    
+    // -- Render with searced user list again ---
+    searchedUserRender();
+    
     const users = getUsers();
     console.log(users);
     
