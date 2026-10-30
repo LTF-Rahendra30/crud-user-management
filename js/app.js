@@ -117,10 +117,14 @@ editUserForm.addEventListener('submit', (event) => {
     editUserForm.reset();
     renderMainPage();
 
-    usersSearched = searchUser(searchUsr,getUsers());
-    searchedUserRender();
-    // --- FILTERED USER RENDER AGAIN IF EDIT USER FROM FILTERED USER ----
-    filteredUserRender();
+    //  ---- CHECK RESOUSCE DATA ------
+    if(searchedUserList.contains(liUser)){
+        usersSearched = searchUser(searchUsr,getUsers());
+        searchedUserRender();
+    } else{
+        // --- FILTERED USER RENDER AGAIN IF EDIT USER FROM FILTERED USER ----
+        filteredUserRender();
+    }
 
     
 });
