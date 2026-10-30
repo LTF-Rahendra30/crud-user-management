@@ -98,6 +98,8 @@ function handleUserListClick(event){
 const editUserForm = document.getElementById('edit-usr-form');
 const modalEditUser = document.getElementById('modal-edit-user');
 // ======= LISTENER TO HENDLE YES COMIRM FOR EDIT USER =======
+let searchUsr;
+let usersSearched;
 editUserForm.addEventListener('submit', (event) => {
     event.preventDefault();
     
@@ -115,8 +117,11 @@ editUserForm.addEventListener('submit', (event) => {
     editUserForm.reset();
     renderMainPage();
 
+    usersSearched = searchUser(searchUsr,getUsers());
+    searchedUserRender();
     // --- FILTERED USER RENDER AGAIN IF EDIT USER FROM FILTERED USER ----
     filteredUserRender();
+
     
 });
 
@@ -201,8 +206,7 @@ filterUsrForm.addEventListener('submit' , (event) => {
 // ========= SEARCH USER =============
 const searchForm = document.getElementById('search-form');
 
-let searchUsr;
-let usersSearched;
+
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -426,6 +430,6 @@ function renderMainPage(){
 // ======== EVENTS DELEGATION WITH CALBACK FUNCTION =====
 userList.addEventListener('click', handleUserListClick)
 filteredUsersList.addEventListener('click',handleUserListClick);
-
+searchedUserList.addEventListener('click',handleUserListClick);
 
 renderMainPage();
