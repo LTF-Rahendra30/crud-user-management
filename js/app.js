@@ -229,7 +229,7 @@ searchForm.addEventListener('submit', (event) => {
 
     
     searchSection.style.display = 'block';
-    if(usersSearched.length === 0){
+    if(usersSearched.length < 1 ){
         searchInfoContent.style.display = 'none';
         searchedUserList.style.display = 'none';
         notFoundContainer.classList.add('not-found-container-wrap');
