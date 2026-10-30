@@ -167,16 +167,27 @@ console.log(users);
 deleteUserButtonYes.addEventListener('click', () => {
     if(selectedUserId === null) return;
     
+    // ---- CHECK WHERE DATA CARD COME FORM ----
+    const deletedFromSearch = searchedUserList.contains(liUser);
+    const deletedFromFilter = filteredUsersList.contains(liUser);
+
     deleteUser(selectedUserId);
     selectedUserId = null;
     
-    filteredUser = filterUser(filteredRole,filteredStatus,getUsers());
-
     modalDelUser.close();
     renderMainPage();
+
+    if (deletedFromSearch){
+        usersSearched = searchUser(searchUsr,getUsers());
+
+        searchedUserRender();
+
+    } else if(deletedFromFilter){
+        filteredUser = filterUser(filteredRole,filteredStatus,getUsers());
     
-    // -- Render with filtered again ---
-    filteredUserRender();
+        // -- Render with filtered again ---
+        filteredUserRender();
+    }
     
     const users = getUsers();
     console.log(users);
