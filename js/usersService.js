@@ -167,4 +167,4 @@ export function deleteUser(id){
 }
 
 // console.log(filterUser("editor","active",users));
-console.log(searchUser("Budi",users));
+// console.log(searchUser("Budi",users));
