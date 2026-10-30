@@ -124,9 +124,7 @@ editUserForm.addEventListener('submit', (event) => {
     } else{
         // --- FILTERED USER RENDER AGAIN IF EDIT USER FROM FILTERED USER ----
         filteredUserRender();
-    }
-
-    
+    }    
 });
 
 
