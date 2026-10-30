@@ -81,12 +81,13 @@ header{
 .bottom-nav{
     display: flex;
     justify-content: space-around;
-    position: fixed;
+    position: sticky;
+    z-index: 999;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: #192747;
-    border-radius: 1rem 1rem 0 0 ;
+    border-radius: 0.7rem 0.7rem 0 0 ;
     padding: 1rem 8px;
 }
 .nav-link svg{
