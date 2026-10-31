@@ -479,7 +479,11 @@ h1{
     }
 
     /* ====== USERS LIST ==== */
-    #user-list{
+    .user-card{
+        flex-wrap: wrap;
+        gap: 1.2rem;
+    }
+    #user-list, #user-filtered-list, #search-usr-list{
         grid-template-columns: repeat(2,1fr);
     }
 }
