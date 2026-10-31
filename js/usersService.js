@@ -166,5 +166,3 @@ export function deleteUser(id){
     return users = users.filter(usr => usr.id !== id); 
 }
 
-// console.log(filterUser("editor","active",users));
-// console.log(searchUser("Budi",users));
