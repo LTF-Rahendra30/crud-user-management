@@ -447,3 +447,20 @@ filteredUsersList.addEventListener('click',handleUserListClick);
 searchedUserList.addEventListener('click',handleUserListClick);
 
 renderMainPage();
+
+
+
+// ========== HENDLE NAVIGATION PAGE ========
+const usersPage = document.getElementById('main-app');
+const dashboardPage = document.getElementById('dashboard-page');
+
+// ===== NAV FUNCTION ========
+function navigate(){
+    const route = location.hash.slice(2) || 'users';
+
+    usersPage.hidden = route !== 'users';
+    dashboardPage.hidden = route !== 'dashboard';
+}
+
+window.addEventListener('hashchange',navigate);
+navigate();
