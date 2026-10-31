@@ -39,6 +39,7 @@ addUserForm.addEventListener('submit', (event) => {
 
     addUserForm.reset();
     modalAddUser.close();
+    
     renderMainPage();
 })
 
