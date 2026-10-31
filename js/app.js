@@ -242,7 +242,7 @@ searchForm.addEventListener('submit', (event) => {
         notFoundContainer.classList.remove('not-found-container-wrap');
         
         searchInfoContent.style.display = 'block';
-        searchedUserList.style.display = 'flex';
+        searchedUserList.style.display = 'grid';
         console.log(usersSearched);
         searchedUserRender();
         
