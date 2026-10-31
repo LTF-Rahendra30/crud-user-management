@@ -257,8 +257,8 @@ h1{
 }
 /* =========== USER CARD =========== */
 #user-list, #user-filtered-list, #search-usr-list{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
     gap: 1rem;
 }
 .user-filtered-margin{
