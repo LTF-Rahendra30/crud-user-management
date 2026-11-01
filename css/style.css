@@ -385,14 +385,23 @@ h1{
 
 /* ========== DASHBOARD PAGE =======
  */
+#resume-data-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
 .resume-card{
-    padding: 1rem;
+    padding: 1.4rem;
     border-radius: 10px;
+    display: flex;
+    gap: 1rem;
+    background-color: var(--primary-white);
 }
 
 .resume-icon{
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     background-color: var(--soft-blue);
     border-radius: 50%;
     padding: 10px;
@@ -402,8 +411,8 @@ h1{
 }
 
 .resume-card svg{
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
     color: var(--primary-blue);
 }
 
