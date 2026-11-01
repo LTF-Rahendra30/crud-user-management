@@ -451,15 +451,16 @@ renderMainPage();
 
 
 // ========== HENDLE NAVIGATION PAGE ========
-const usersPage = document.getElementById('main-app');
+const usersPage = document.getElementById('users-page');
 const dashboardPage = document.getElementById('dashboard-page');
-
+const settingsPage = document.getElementById('settings-page');
 // ===== NAV FUNCTION ========
 function navigate(){
     const route = location.hash.slice(2) || 'users';
 
     usersPage.hidden = route !== 'users';
     dashboardPage.hidden = route !== 'dashboard';
+    settingsPage.hidden = route !== 'settings'
 }
 
 window.addEventListener('hashchange',navigate);
