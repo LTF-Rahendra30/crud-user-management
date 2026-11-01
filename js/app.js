@@ -1,5 +1,5 @@
 
-import { createUser,getUsers,deleteUser,editUser,filterUser,searchUser } from "./usersService.js";
+import { createUser,getUsers,deleteUser,editUser,filterUser,searchUser,calculateResume } from "./usersService.js";
 
 
 const userList = document.getElementById('user-list');
@@ -440,13 +440,31 @@ function renderUser(){
 // ===== RENDER MAIN PAGE =====
 function renderMainPage(){
     renderUser();
+    renderResumeData();
 }
 // ======== EVENTS DELEGATION WITH CALBACK FUNCTION =====
 userList.addEventListener('click', handleUserListClick)
 filteredUsersList.addEventListener('click',handleUserListClick);
 searchedUserList.addEventListener('click',handleUserListClick);
 
-renderMainPage();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -465,3 +483,28 @@ function navigate(){
 
 window.addEventListener('hashchange',navigate);
 navigate();
+
+// ======== DASHBOARD PAGE =========
+const resumeDataContainer = document.getElementById('resume-data-container');
+
+function renderResumeData(){
+    const usersData = getUsers();
+    const usersResmue = calculateResume(usersData);
+    resumeDataContainer.innerHTML = `
+        <p>Total users: ${usersResmue.totalUsers}</p>
+        <p>Admin: ${usersResmue.admin}</p>
+        <p>Editor: ${usersResmue.editor}</p>
+        <p>viewer: ${usersResmue.viewer}</p>
+        <p>active user: ${usersResmue.activeUsers}</p>
+        <p>inactive user: ${usersResmue.inactiveUsers}</p>
+    `
+}
+
+
+renderMainPage();
+
+
+
+
+
+
