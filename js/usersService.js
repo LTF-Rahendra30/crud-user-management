@@ -172,18 +172,25 @@ export function calculateResume(usersData){
     return usersData.reduce((acc,user) => {
         acc.totalUsers += 1;
 
-        // Calculate role
-        if(!acc.roles[user.role]){
-            acc.roles[user.role] = 0;
-        }
-        acc.status[user.status] += 1;
+        // Calculate Role
+        if (user.role === 'admin') acc.admin += 1;
+        if (user.role === 'editor') acc.editor += 1;
+        if (user.role === 'viewer') acc.viewer += 1;
 
+        // Calculate Status
+        if (user.status === 'active') acc.activeUsers += 1;
+        if (user.status === 'inactive') acc.inactiveUsers += 1;
         return acc;
     },{
         totalUsers: 0,
-        roles: {},
-        status: {}
+        admin:0,
+        editor:0,
+        viewer:0,
+        activeUsers:0,
+        inactiveUsers:0
     });
 }
 
-console.log(calculateResume(users))
+console.log(calculateResume(users));
+console.log(createUser("Bowok",'Bowok@mail.crot','editor','inactive'));
+console.log(calculateResume(users));
