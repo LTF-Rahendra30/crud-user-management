@@ -166,3 +166,24 @@ export function deleteUser(id){
     return users = users.filter(usr => usr.id !== id); 
 }
 
+
+// ========== CALCULATE RESUME OF USERS ========
+export function calculateResume(usersData){
+    return usersData.reduce((acc,user) => {
+        acc.totalUsers += 1;
+
+        // Calculate role
+        if(!acc.roles[user.role]){
+            acc.roles[user.role] = 0;
+        }
+        acc.status[user.status] += 1;
+
+        return acc;
+    },{
+        totalUsers: 0,
+        roles: {},
+        status: {}
+    });
+}
+
+console.log(calculateResume(users))
