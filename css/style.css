@@ -414,16 +414,43 @@ h1{
     height: 25px;
     width: 25px;
     color: var(--primary-blue);
+    margin: auto;
 }
 
 
+.resume-admin{
+    background-color: var(--soft-purple);
+}
 
+.resume-admin svg{
+    color: var(--primary-purple);
+}
 
+.resume-editor{
+    background-color: var(--soft-blue);
+}
+.resume-editor svg{
+    color: var(--primary-blue);
+}
 
-
-
-
-
+.resume-viewer{
+    background-color: var(--soft-grey);
+}
+.resume-viewer svg{
+    color: var(--primary-paragraph-color);
+}
+.resume-active{
+    background-color: var(--soft-green);
+}
+.resume-active svg{
+    color: var(--primary-green);
+}
+.resume-inactive{
+    background-color: var(--soft-red);
+}
+.resume-inactive svg{
+    color: var(--primary-red);
+}
 
 
 /* ========== MEDIA QUERY ========= */
