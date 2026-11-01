@@ -124,6 +124,9 @@ h1{
     gap: 1rem;
 
 }
+.hero-sub{
+    color: var(--primary-paragraph-color);
+}
 .button-wrap{
     width: 100%;
 }
