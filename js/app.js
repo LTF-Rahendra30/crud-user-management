@@ -93,7 +93,11 @@ function handleUserListClick(event){
 }
 
 
-
+// ====== FORM FOR FILTER USER DIALOG ====
+const filterUsrForm = document.getElementById('filter-usr-form');
+let filteredUser;
+let filteredRole;
+let filteredStatus;
 
 // ====== HENDLE EDIT USER =========
 const editUserForm = document.getElementById('edit-usr-form');
@@ -114,16 +118,21 @@ editUserForm.addEventListener('submit', (event) => {
     editUser(idUser,newName,newEmail,newRole,newStatus);
     console.log(getUsers());
     
+    const editedFromSearch = searchedUserList.contains(liUser);
+    const editedFromFilter = filteredUsersList.contains(liUser);
+
     modalEditUser.close();
     editUserForm.reset();
     renderMainPage();
 
+    
     //  ---- CHECK RESOUSCE DATA ------
-    if(searchedUserList.contains(liUser)){
+    if(editedFromSearch){
         usersSearched = searchUser(searchUsr,getUsers());
         searchedUserRender();
-    } else{
+    } else if(editedFromFilter){
         // --- FILTERED USER RENDER AGAIN IF EDIT USER FROM FILTERED USER ----
+        filteredUser = filterUser(filteredRole, filteredStatus, getUsers())
         filteredUserRender();
     }    
 });
@@ -156,11 +165,7 @@ closeFilterUser.addEventListener('click', () => {
     modalFilterUser.close();
 });
 
-// ====== FORM FOR FILTER USER DIALOG ====
-const filterUsrForm = document.getElementById('filter-usr-form');
-let filteredUser;
-let filteredRole;
-let filteredStatus;
+
 
 // ------ LISTENER TO HENDLE YES COMIRM FOR DELETE USER -------
 const users = getUsers();
@@ -482,7 +487,7 @@ function navigate(){
     dashboardPage.hidden = route !== 'dashboard';
     settingsPage.hidden = route !== 'settings';
 
-    
+
     const currentHref = `#/${route}`;
     navLinks.forEach((link) => {
         const isActive = link.getAttribute('href') === currentHref;
