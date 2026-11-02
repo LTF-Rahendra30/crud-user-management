@@ -190,7 +190,3 @@ export function calculateResume(usersData){
         inactiveUsers:0
     });
 }
-
-console.log(calculateResume(users));
-console.log(createUser("Bowok",'Bowok@mail.crot','editor','inactive'));
-console.log(calculateResume(users));
