@@ -420,9 +420,12 @@ h1{
 
 .resume-content span{
     font-weight: bold;
-    font-size: clamp(1.8rem,5.5vw, 2.2rem);
+    font-size: clamp(1.5rem,5.5vw, 2rem);
 }
-
+.resume-card p{
+    font-size: clamp(0.9rem,1.8vw,1rem);
+    font-weight: 500;
+}
 .resume-admin{
     background-color: var(--soft-purple);
 }
@@ -582,7 +585,11 @@ h1{
 
 /* ========== DEKSTOP =============== */
 @media (min-width: 1024px) {
-    
+    /* ======= RESUME DATA ===== */
+    #resume-data-container{
+    grid-template-columns: repeat(3,1fr);
+
+    }
 }
 /* ======= PANEL DIALOG ========= */
 dialog{
