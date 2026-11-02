@@ -472,6 +472,29 @@ h1{
     color: var(--primary-red);
 }
 
+/* =============== SETTINGS PAGE ========== */
+.settings-content{
+    display: flex;
+    justify-content: center;
+    margin: 4rem 2rem;
+}
+.empty-info-set-page{
+    background-color: var(--primary-white);
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    line-height: 1.5rem;
+    max-width: 500px;
+}
+.empty-info-set-page p{
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--label-color);
+}
+
+
+
+
 
 /* ========== MEDIA QUERY ========= */
 
