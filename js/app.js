@@ -472,17 +472,34 @@ searchedUserList.addEventListener('click',handleUserListClick);
 const usersPage = document.getElementById('users-page');
 const dashboardPage = document.getElementById('dashboard-page');
 const settingsPage = document.getElementById('settings-page');
+
+const navLinks = document.querySelectorAll('nav a[href^="#/"]');
 // ===== NAV FUNCTION ========
 function navigate(){
     const route = location.hash.slice(2) || 'users';
 
     usersPage.hidden = route !== 'users';
     dashboardPage.hidden = route !== 'dashboard';
-    settingsPage.hidden = route !== 'settings'
-}
+    settingsPage.hidden = route !== 'settings';
 
+    
+    const currentHref = `#/${route}`;
+    navLinks.forEach((link) => {
+        const isActive = link.getAttribute('href') === currentHref;
+    
+        link.classList.toggle('is-active',isActive);
+    
+        if(isActive){
+            link.setAttribute('aria-current','page');
+        } else{
+            link.removeAttribute('aria-current');
+        }
+    });
+}
 window.addEventListener('hashchange',navigate);
 navigate();
+
+
 
 // ======== DASHBOARD PAGE =========
 const resumeDataContainer = document.getElementById('resume-data-container');
