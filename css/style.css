@@ -88,7 +88,7 @@ header{
     width: 100%;
     background-color: #192747;
     border-radius: 0.7rem 0.7rem 0 0 ;
-    padding: 1rem 8px;
+    padding: 10px;
     padding-bottom: calc(0.8rem + env(save-area-inset-bottom));
 }
 .nav-link svg{
@@ -141,6 +141,17 @@ h1{
     color: #F7F9FE;
     min-height: 40px;
 }
+/* ---- NAV STYLE -------- */
+.top-nav a, .bottom-nav a{
+    padding: 0.7rem;
+    transition: 0.3s ease;
+}
+.is-active{
+    background-color: #273a66;
+    border-radius: 12px;
+}
+
+
 
 /* ========= SEARCH SECTION ========
  */
@@ -533,7 +544,7 @@ h1{
         gap: 1.3rem;
         width: 100%;
         min-height: 100%;
-        padding: 1.2rem 1rem;
+        padding: 1rem;
     }
     .top-nav a{
         display: flex;
